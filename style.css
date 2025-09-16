@@ -211,7 +211,7 @@ body {
   display: block;
   white-space: nowrap;
   margin-top: 10%;
-  border-right: 15px solid #3576df;
+  border-right: 7px solid #3576df;
   font-weight: 700;
   font-size: 4.5rem;
   overflow: hidden;
@@ -231,6 +231,45 @@ body {
   width: 100% !important;
   height: 100% !important;
   display: block;
+}
+
+/* remove bullets */
+li {
+  list-style: none;
+}
+
+#additional-skills {
+  overflow: hidden; /* esconde o conteúdo que sai */
+  position: relative;
+  width: 100%; /* pega toda a largura da div pai */
+}
+
+canvas {
+  will-change: transform;
+}
+
+.logos ul {
+  display: flex;
+  gap: 1rem; /* espaçamento entre badges */
+  width: fit-content; /* a UL cresce conforme os itens */
+  animation: slide 15s linear infinite;
+}
+
+.skill-item {
+  white-space: nowrap; /* evita quebra de linha */
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%); /* metade porque você já duplicou os itens */
+  }
+}
+
+.logos ul:hover {
+  animation-play-state: paused;
 }
 
 

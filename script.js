@@ -109,9 +109,9 @@ const technologies = [
     category: "Backend",
     description: "Server-side technologies and APIs",
     skills: [
-      { name: "Laravel", level: "Expert", icon: "🟢" },
-      { name: "C#", level: "Expert", icon: "🚀" },
-      { name: "MySQL", level: "Advanced", icon: "🐍" },
+      { name: "Laravel", level: "Expert", icon: "🐘" },
+      { name: "C#", level: "Expert", icon: "🦄" },
+      { name: "MySQL", level: "Advanced", icon: "" },
       { name: "Oracle Database", level: "Advanced", icon: "🚀" },
       { name: "PHP", level: "Advanced", icon: "🐘" },
     ],
@@ -207,6 +207,20 @@ const additionalSkills = [
   "Code Review",
   "Technical Writing",
   "Team Leadership",
+  "Responsive Design",
+  "RESTful APIs",
+  "GraphQL",
+  "Microservices",
+  "Test-Driven Development",
+  "Agile Methodology",
+  "UI/UX Design",
+  "Performance Optimization",
+  "SEO",
+  "Accessibility",
+  "CI/CD",
+  "Code Review",
+  "Technical Writing",
+  "Team Leadership"
 ];
 
 // Initialize Lucide icons
@@ -225,6 +239,8 @@ function initTheme() {
       html.classList.contains("dark") ? "dark" : "light"
     );
     lucide.createIcons();
+      window.location.reload();
+
   }
 
   themeToggle.addEventListener("click", toggleTheme);
@@ -523,14 +539,14 @@ function generateTechnologies() {
     .join("");
 
   // Generate additional skills
-  const additionalSkillsContainer =
-    document.getElementById("additional-skills");
-  additionalSkillsContainer.innerHTML = additionalSkills
-    .map(
-      (skill) =>
-        `<span class="badge badge-outline text-sm py-2 px-4">${skill}</span>`
-    )
-    .join("");
+// const additionalSkillsContainer =
+//     document.getElementById("additional-skills");
+//   additionalSkillsContainer.innerHTML = additionalSkills
+//     .map(
+//       (skill) =>
+//         `<span class="badge badge-outline text-sm py-2 px-4">${skill}</span>`
+//     )
+//     .join("");
 }
 
 // Generate blog posts

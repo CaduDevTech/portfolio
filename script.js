@@ -7,7 +7,7 @@ const observer = new ResizeObserver((entries) => {
 
     if (width == 0) {
       if (nameElement.textContent === "Full Stack Developer") {
-        nameElement.textContent = "Carlos Ed. Santos ";
+        nameElement.textContent = "Carlos Santos ";
       } else {
         nameElement.textContent = "Full Stack Developer";
       }
@@ -97,34 +97,33 @@ const technologies = [
     category: "Frontend",
     description: "Modern UI frameworks and libraries",
     skills: [
-      { name: "Angular", level: "Expert", icon: "⚛️" },
-      { name: "Ionic", level: "Expert", icon: "▲" },
-      { name: "TypeScript", level: "Advanced", icon: "📘" },
-      { name: "Tailwind CSS", level: "Expert", icon: "🎨" },
-      { name: "bootstrap", level: "Intermediate", icon: "💚" },
-      { name: "Figma", level: "Advanced", icon: "🟨" },
+      { name: "Angular", level: "Expert", icon: '<img src="icones SVG/angular.svg" class="h-6 w-6"/>'},
+      { name: "Ionic", level: "Expert", icon: '<img src="icones SVG/ionic.svg" class="h-6 w-6"/>'},
+      { name: "TypeScript", level: "Advanced", icon: '<img src="icones SVG/typescript.svg" class="h-6 w-6"/>'},
+      { name: "Tailwind CSS", level: "Expert", icon: '<img src="icones SVG/tailwind.svg" class="h-6 w-6"/>' },
+      { name: "bootstrap", level: "Intermediate", icon: '<img src="icones SVG/bootstrap.svg" class="h-6 w-6"/>' },
+      { name: "Figma", level: "Advanced", icon: '<img src="icones SVG/figma.svg" class="h-6 w-6"/>' },
     ],
   },
   {
     category: "Backend",
     description: "Server-side technologies and APIs",
     skills: [
-      { name: "Laravel", level: "Expert", icon: "🐘" },
-      { name: "C#", level: "Expert", icon: "🦄" },
-      { name: "MySQL", level: "Advanced", icon: "" },
-      { name: "Oracle Database", level: "Advanced", icon: "🚀" },
-      { name: "PHP", level: "Advanced", icon: "🐘" },
+      { name: "Laravel", level: "Expert", icon: '<img src="icones SVG/laravel.svg" class="h-6 w-6"/>' },
+      { name: "C#", level: "Expert", icon: '<img src="icones SVG/csharp.svg" class="h-6 w-6"/>' },
+      { name: "MySQL", level: "Advanced", icon: '<img src="icones SVG/mysql.svg" class="h-6 w-6"/>'},
+      { name: "Oracle Database", level: "Advanced", icon: '<img src="icones SVG/sqlServer.svg" class="h-6 w-6"/>' },
+      { name: "PHP", level: "Advanced", icon: '<img src="icones SVG/php.svg" class="h-6 w-6"/>' },
     ],
   },
   {
     category: "DevOps & Tools",
     description: "Development and deployment tools",
     skills: [
-      { name: "Linux", level: "Advanced", icon: "🐳" },
-      { name: "AWS", level: "Advanced", icon: "☁️" },
-      { name: "Vercel", level: "Expert", icon: "▲" },
-      { name: "Git", level: "Expert", icon: "📝" },
-      { name: "Apache Server", level: "Advanced", icon: "⚡" },
+      { name: "Linux", level: "Advanced", icon: '<img src="icones SVG/linux.svg" class="h-6 w-6"/>' },
+      { name: "AWS", level: "Advanced", icon: '<img src="icones SVG/aws.svg" class="h-6 w-6"/>' },
+      { name: "Git", level: "Expert", icon: '<img src="icones SVG/git.svg" class="h-6 w-6"/>' },
+      { name: "Apache Server", level: "Advanced", icon: '<img src="icones SVG/apache.svg" class="h-6 w-6"/>' },
     ],
   },
 ];
@@ -503,7 +502,7 @@ function generateTechnologies() {
   technologiesGrid.innerHTML = technologies
     .map(
       (category, categoryIndex) => `
-                <div class="card-hover bg-card rounded-xl shadow-lg p-6 fade-in" style="animation-delay: ${
+                <div class="card-hover bg-card rounded-xl shadow-lg p-6 fade-in visible" style="animation-delay: ${
                   categoryIndex * 200
                 }ms;">
                     <h3 class="text-xl font-semibold text-foreground mb-2">${
@@ -537,16 +536,6 @@ function generateTechnologies() {
             `
     )
     .join("");
-
-  // Generate additional skills
-// const additionalSkillsContainer =
-//     document.getElementById("additional-skills");
-//   additionalSkillsContainer.innerHTML = additionalSkills
-//     .map(
-//       (skill) =>
-//         `<span class="badge badge-outline text-sm py-2 px-4">${skill}</span>`
-//     )
-//     .join("");
 }
 
 // Generate blog posts
@@ -564,7 +553,7 @@ function generateBlogPosts() {
   blogGrid.innerHTML = blogPosts
     .map(
       (post, index) => `
-                <div class="card-hover bg-card rounded-xl overflow-hidden shadow-lg fade-in cursor-pointer" style="animation-delay: ${
+                <div class="card-hover bg-card rounded-xl overflow-hidden shadow-lg fade-in visible cursor-pointer" style="animation-delay: ${
                   index * 100
                 }ms;">
                     <div class="relative overflow-hidden rounded-t-lg group">
@@ -575,7 +564,7 @@ function generateBlogPosts() {
       }" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
                     <div class="p-6">
-                        <div class="flex items-center space-x-4 text-sm text-muted-foreground mb-2">
+                        <div class="flex items-center space-x-4 text-sm text-muted-foreground mb-2 visible fade-in">
                             <div class="flex items-center">
                                 <i data-lucide="calendar" class="mr-1 h-4 w-4"></i>
                                 ${formatDate(post.date)}

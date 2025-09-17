@@ -2,8 +2,6 @@
   font-family: "Inter", sans-serif;
 }
 
-
-
 :root {
   --background: 0 0% 100%;
   --foreground: 222.2 84% 4.9%;
@@ -224,9 +222,6 @@ body {
   margin-right: auto;
 }
 
-.title-principal {
-}
-
 .header.finisher-header canvas {
   width: 100% !important;
   height: 100% !important;
@@ -239,9 +234,9 @@ li {
 }
 
 #additional-skills {
-  overflow: hidden; /* esconde o conteúdo que sai */
+  overflow: hidden;
   position: relative;
-  width: 100%; /* pega toda a largura da div pai */
+  width: 100%;
 }
 
 canvas {
@@ -250,8 +245,8 @@ canvas {
 
 .logos ul {
   display: flex;
-  gap: 1rem; /* espaçamento entre badges */
-  width: fit-content; /* a UL cresce conforme os itens */
+  gap: 1rem;
+  width: fit-content;
   animation: slide 15s linear infinite;
 }
 
@@ -271,7 +266,6 @@ canvas {
 .logos ul:hover {
   animation-play-state: paused;
 }
-
 
 @keyframes mark {
   50% {

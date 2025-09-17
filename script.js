@@ -95,35 +95,35 @@ const projects = [
 const technologies = [
   {
     category: "Frontend",
-    description: "Modern UI frameworks and libraries",
+    description: "Tecnologias de desenvolvimento front-end",
     skills: [
-      { name: "Angular", level: "Expert", icon: '<img src="icones SVG/angular.svg" class="h-6 w-6"/>'},
-      { name: "Ionic", level: "Expert", icon: '<img src="icones SVG/ionic.svg" class="h-6 w-6"/>'},
-      { name: "TypeScript", level: "Advanced", icon: '<img src="icones SVG/typescript.svg" class="h-6 w-6"/>'},
-      { name: "Tailwind CSS", level: "Expert", icon: '<img src="icones SVG/tailwind.svg" class="h-6 w-6"/>' },
-      { name: "bootstrap", level: "Intermediate", icon: '<img src="icones SVG/bootstrap.svg" class="h-6 w-6"/>' },
-      { name: "Figma", level: "Advanced", icon: '<img src="icones SVG/figma.svg" class="h-6 w-6"/>' },
+      { name: "Angular", level: "Intermediário", icon: '<img src="icones SVG/angular.svg" class="h-6 w-6"/>'},
+      { name: "Ionic", level: "Avançado", icon: '<img src="icones SVG/ionic.svg" class="h-6 w-6"/>'},
+      { name: "TypeScript", level: "Intermediário", icon: '<img src="icones SVG/typescript.svg" class="h-6 w-6"/>'},
+      { name: "Tailwind CSS", level: "Intermediário", icon: '<img src="icones SVG/tailwind.svg" class="h-6 w-6"/>' },
+      { name: "bootstrap", level: "Avançado", icon: '<img src="icones SVG/bootstrap.svg" class="h-6 w-6"/>' },
+      { name: "Figma", level: "Básico", icon: '<img src="icones SVG/figma.svg" class="h-6 w-6"/>' },
     ],
   },
   {
     category: "Backend",
-    description: "Server-side technologies and APIs",
+    description: "Tecnologias de servidor e banco de dados",
     skills: [
-      { name: "Laravel", level: "Expert", icon: '<img src="icones SVG/laravel.svg" class="h-6 w-6"/>' },
-      { name: "C#", level: "Expert", icon: '<img src="icones SVG/csharp.svg" class="h-6 w-6"/>' },
-      { name: "MySQL", level: "Advanced", icon: '<img src="icones SVG/mysql.svg" class="h-6 w-6"/>'},
-      { name: "Oracle Database", level: "Advanced", icon: '<img src="icones SVG/sqlServer.svg" class="h-6 w-6"/>' },
-      { name: "PHP", level: "Advanced", icon: '<img src="icones SVG/php.svg" class="h-6 w-6"/>' },
+      { name: "Laravel", level: "Intermediário", icon: '<img src="icones SVG/laravel.svg" class="h-6 w-6"/>' },
+      { name: "C#", level: "Básico", icon: '<img src="icones SVG/csharp.svg" class="h-6 w-6"/>' },
+      { name: "MySQL", level: "Intermediário", icon: '<img src="icones SVG/mysql.svg" class="h-6 w-6"/>'},
+      { name: "Oracle Database", level: "Intermediário", icon: '<img src="icones SVG/sqlServer.svg" class="h-6 w-6"/>' },
+      { name: "PHP", level: "Intermediário", icon: '<img src="icones SVG/php.svg" class="h-6 w-6"/>' },
     ],
   },
   {
     category: "DevOps & Tools",
-    description: "Development and deployment tools",
+    description: "Ferramentas e tecnologias de suporte",
     skills: [
-      { name: "Linux", level: "Advanced", icon: '<img src="icones SVG/linux.svg" class="h-6 w-6"/>' },
-      { name: "AWS", level: "Advanced", icon: '<img src="icones SVG/aws.svg" class="h-6 w-6"/>' },
-      { name: "Git", level: "Expert", icon: '<img src="icones SVG/git.svg" class="h-6 w-6"/>' },
-      { name: "Apache Server", level: "Advanced", icon: '<img src="icones SVG/apache.svg" class="h-6 w-6"/>' },
+      { name: "Linux", level: "Básico", icon: '<img src="icones SVG/linux.svg" class="h-6 w-6"/>' },
+      { name: "AWS", level: "Básico", icon: '<img src="icones SVG/aws.svg" class="h-6 w-6"/>' },
+      { name: "Git", level: "Avançado", icon: '<img src="icones SVG/git.svg" class="h-6 w-6"/>' },
+      { name: "Apache Server", level: "Básico", icon: '<img src="icones SVG/apache.svg" class="h-6 w-6"/>' },
     ],
   },
 ];
@@ -489,13 +489,13 @@ function generateTechnologies() {
   function getLevelColor(level) {
     switch (level) {
       case "Expert":
-        return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300";
-      case "Advanced":
-        return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300";
-      case "Intermediate":
-        return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300";
-      default:
         return "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300";
+      case "Avançado":
+        return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300";
+      case "Intermediário":
+        return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300";
+      case "Básico":
+        return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300";
     }
   }
 

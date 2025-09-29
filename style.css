@@ -127,6 +127,23 @@ body {
   z-index: 1000;
   align-items: center;
   justify-content: center;
+  animation: slide-in-bck-center 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.modal-indisponivel{
+  animation: slide-in-bck-center 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+@keyframes slide-in-bck-center {
+  0% {
+    transform: translateZ(600px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
 }
 
 .modal.active {
@@ -184,6 +201,7 @@ body {
   font-size: 0.75rem;
   font-weight: 500;
   transition: colors;
+  text-wrap: nowrap;
 }
 
 .badge-secondary {
@@ -247,7 +265,7 @@ canvas {
   display: flex;
   gap: 1rem;
   width: fit-content;
-  animation: slide 15s linear infinite;
+  animation: slide 25s linear infinite;
 }
 
 .skill-item {
@@ -258,8 +276,11 @@ canvas {
   0% {
     transform: translateX(0);
   }
+  50% {
+    transform: translateX(-26%); /* metade porque você já duplicou os itens */
+  }
   100% {
-    transform: translateX(-25%); /* metade porque você já duplicou os itens */
+    transform: translateX(0%); /* metade porque você já duplicou os itens */
   }
 }
 
@@ -267,11 +288,40 @@ canvas {
   animation-play-state: paused;
 }
 
+.cards-skill:hover {
+animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;}
+
 @keyframes mark {
   50% {
     border-right-color: transparent;
   }
 }
+
+@keyframes shake-horizontal {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateX(-8px);
+  }
+  20%,
+  40%,
+  60% {
+    transform: translateX(8px);
+  }
+  80% {
+    transform: translateX(6px);
+  }
+  90% {
+    transform: translateX(-6px);
+  }
+}
+
+
 @keyframes typing {
   0% {
     width: 0;

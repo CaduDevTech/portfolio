@@ -20,24 +20,26 @@ observer.observe(nameElement);
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with payment integration",
+    title: "SIGAF - Sistema de Gerenciamento de Ativos Físicos",
+    description:
+      "Sistema completo para gestão de ativos físicos e patrimônio empresarial. Rastreia bens via QRCode, controla depreciação, manutenções, movimentações e gera termos de responsabilidade.",
     longDescription:
-      "A comprehensive e-commerce platform built with Next.js and Stripe. Features include user authentication, product management, shopping cart, payment processing, and order tracking. The admin dashboard allows for inventory management and sales analytics.",
-    image: "teste.png",
-    technologies: ["Next.js", "TypeScript", "Stripe", "Prisma", "PostgreSQL"],
-    demoUrl: "https://demo.example.com",
-    githubUrl: "https://github.com/johndoe/ecommerce",
+      " Plataforma completa para controle patrimonial com rastreabilidade, depreciação contábil, manutenção, movimentação de bens e auditoria. O <b>SIGAF</b> permite o gerenciamento do ciclo de vida completo de ativos físicos empresariais — desde aquisição, uso e manutenção, até a baixa e histórico contábil. Ideal para empresas que precisam atender a auditorias, controlar perdas e manter conformidade fiscal (CFC, LGPD, ISO, etc.).<br><br><b>🎯 Funcionalidades principais</b><br>-Gestão completa de ativos físicos (TI, frota, imóveis, mobiliário, EPIs etc)<br>-Controle de depreciação contábil com base na Resolução CFC 1.177/09<br>-Inventário físico e check-in/out via smartphone<br>-Manutenção preventiva e corretiva com laudos<br>-Termo de responsabilidade gerado em PDF<br>-Transferência entre setores/filiais com histórico<br>-Logs de auditoria detalhados (quem, o que, quando)<br>-Suporte a multi-empresas (multi-tenancy SaaS)<br><br><b>🧱 Tecnologias</b><br><b>🧠 Backend:</b> Laravel 10+, MySQL/PostgreSQL, Spatie packages<br><b>📱 Frontend:</b> Angular 20 / Ionic 7 (Mobile-first)<br><b>🔒 Segurança:</b> Laravel Sanctum, RBAC, Activity Log, uploads assinados<br><b>🧪 Status:</b> Projeto em desenvolvimento<br>Projeto ainda sendo criado telas e lógica de front-end, sempre pensando na segurança.<br><br>🟢Metodologia:</b> Projeto desenvolvido com o Trello para ajudar com o desenvolvimento",
+    image: ["images/login_sigaf.jpg", "images/dashboard_sigaf.jpg"],
+    technologies: ["Angular", "Ionic", "Laravel", "MySQL", "TypeScript"],
+    demoUrl: "",
+    githubUrl: "",
     category: "Full Stack",
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "Collaborative project management tool with real-time updates",
+    title: "Site De Noticas",
+    description:
+      "Plataforma de notícias com funcionalidades completas de autenticação e registro de usuários, implementada com alto nível de segurança, abrangendo criptografia de dados, proteção contra CSRF, prevenção de injeções SQL, e mitigação de vulnerabilidades XSS.",
     longDescription:
-      "A modern task management application with real-time collaboration features. Built with React and Socket.io for instant updates. Includes drag-and-drop functionality, team management, file attachments, and progress tracking.",
-    image: "teste.png",
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Express"],
+      "Desenvolvimento de um protótipo de site de notícias, permitindo que os usuários se autentiquem, publiquem, editem e excluam suas publicações. Este projeto, com o objetivo de ser acessível ao público, foi desenvolvido com rigorosas medidas de segurança no código, incluindo proteção contra vulnerabilidades como CSRF, injeção de SQL e XSS.",
+    image: "images/teste.png",
+    technologies: ["PHP", "Bootstrap", "MySQL", "JavaScript", "HTML", "CSS"],
     demoUrl: "https://tasks.example.com",
     githubUrl: "https://github.com/johndoe/taskmanager",
     category: "Full Stack",
@@ -48,7 +50,7 @@ const projects = [
     description: "Beautiful weather app with location-based forecasts",
     longDescription:
       "An elegant weather dashboard that provides detailed weather information and forecasts. Features include location-based weather, interactive maps, weather alerts, and historical data visualization. Built with modern React patterns and responsive design.",
-    image: "teste.png",
+    image: "images/teste.png",
     technologies: ["React", "TypeScript", "OpenWeather API", "Chart.js"],
     demoUrl: "https://weather.example.com",
     githubUrl: "https://github.com/johndoe/weather",
@@ -60,7 +62,7 @@ const projects = [
     description: "Content management system for bloggers and writers",
     longDescription:
       "A powerful content management system designed for bloggers and content creators. Features include a rich text editor, media management, SEO optimization, comment system, and analytics dashboard. Built with a headless architecture for maximum flexibility.",
-    image: "teste.jpg",
+    image: "images/teste.jpg",
     technologies: ["Next.js", "Sanity", "Tailwind CSS", "Vercel"],
     demoUrl: "https://blog.example.com",
     githubUrl: "https://github.com/johndoe/blog-cms",
@@ -72,7 +74,7 @@ const projects = [
     description: "Responsive portfolio site with smooth animations",
     longDescription:
       "A modern portfolio website showcasing projects and skills. Features smooth animations, responsive design, dark mode support, and optimized performance. Built with Next.js and deployed on Vercel for lightning-fast loading times.",
-    image: "teste.png",
+    image: "images/teste.png",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
     demoUrl: "https://portfolio.example.com",
     githubUrl: "https://github.com/johndoe/portfolio",
@@ -84,7 +86,7 @@ const projects = [
     description: "Microservices API gateway with authentication",
     longDescription:
       "A robust API gateway solution for microservices architecture. Includes rate limiting, authentication, request/response transformation, and monitoring. Built with Node.js and Redis for high performance and scalability.",
-    image: "teste.jpg",
+    image: "images/teste.jpg",
     technologies: ["Node.js", "Express", "Redis", "JWT", "Docker"],
     demoUrl: "https://api.example.com",
     githubUrl: "https://github.com/johndoe/api-gateway",
@@ -97,33 +99,93 @@ const technologies = [
     category: "Frontend",
     description: "Tecnologias de desenvolvimento front-end",
     skills: [
-      { name: "Angular", level: "Intermediário", icon: '<img src="icones SVG/angular.svg" class="h-6 w-6"/>'},
-      { name: "Ionic", level: "Avançado", icon: '<img src="icones SVG/ionic.svg" class="h-6 w-6"/>'},
-      { name: "TypeScript", level: "Intermediário", icon: '<img src="icones SVG/typescript.svg" class="h-6 w-6"/>'},
-      { name: "Tailwind CSS", level: "Intermediário", icon: '<img src="icones SVG/tailwind.svg" class="h-6 w-6"/>' },
-      { name: "bootstrap", level: "Avançado", icon: '<img src="icones SVG/bootstrap.svg" class="h-6 w-6"/>' },
-      { name: "Figma", level: "Básico", icon: '<img src="icones SVG/figma.svg" class="h-6 w-6"/>' },
+      {
+        name: "Angular",
+        level: "Intermediário",
+        icon: '<img src="icones SVG/angular.svg" class="h-6 w-6"/>',
+      },
+      {
+        name: "Ionic",
+        level: "Avançado",
+        icon: '<img src="icones SVG/ionic.svg" class="h-6 w-6"/>',
+      },
+      {
+        name: "TypeScript",
+        level: "Intermediário",
+        icon: '<img src="icones SVG/typescript.svg" class="h-6 w-6"/>',
+      },
+      {
+        name: "Tailwind CSS",
+        level: "Intermediário",
+        icon: '<img src="icones SVG/tailwind.svg" class="h-6 w-6"/>',
+      },
+      {
+        name: "bootstrap",
+        level: "Avançado",
+        icon: '<img src="icones SVG/bootstrap.svg" class="h-6 w-6"/>',
+      },
+      {
+        name: "Figma",
+        level: "Básico",
+        icon: '<img src="icones SVG/figma.svg" class="h-6 w-6"/>',
+      },
     ],
   },
   {
     category: "Backend",
     description: "Tecnologias de servidor e banco de dados",
     skills: [
-      { name: "Laravel", level: "Intermediário", icon: '<img src="icones SVG/laravel.svg" class="h-6 w-6"/>' },
-      { name: "C#", level: "Básico", icon: '<img src="icones SVG/csharp.svg" class="h-6 w-6"/>' },
-      { name: "MySQL", level: "Intermediário", icon: '<img src="icones SVG/mysql.svg" class="h-6 w-6"/>'},
-      { name: "Oracle Database", level: "Intermediário", icon: '<img src="icones SVG/sqlServer.svg" class="h-6 w-6"/>' },
-      { name: "PHP", level: "Intermediário", icon: '<img src="icones SVG/php.svg" class="h-6 w-6"/>' },
+      {
+        name: "Laravel",
+        level: "Intermediário",
+        icon: '<img src="icones SVG/laravel.svg" class="h-6 w-6"/>',
+      },
+      {
+        name: "C#",
+        level: "Básico",
+        icon: '<img src="icones SVG/csharp.svg" class="h-6 w-6"/>',
+      },
+      {
+        name: "MySQL",
+        level: "Intermediário",
+        icon: '<img src="icones SVG/mysql.svg" class="h-6 w-6"/>',
+      },
+      {
+        name: "Oracle Database",
+        level: "Intermediário",
+        icon: '<img src="icones SVG/sqlServer.svg" class="h-6 w-6"/>',
+      },
+      {
+        name: "PHP",
+        level: "Intermediário",
+        icon: '<img src="icones SVG/php.svg" class="h-6 w-6"/>',
+      },
     ],
   },
   {
     category: "DevOps & Tools",
     description: "Ferramentas e tecnologias de suporte",
     skills: [
-      { name: "Linux", level: "Básico", icon: '<img src="icones SVG/linux.svg" class="h-6 w-6"/>' },
-      { name: "AWS", level: "Básico", icon: '<img src="icones SVG/aws.svg" class="h-6 w-6"/>' },
-      { name: "Git", level: "Avançado", icon: '<img src="icones SVG/git.svg" class="h-6 w-6"/>' },
-      { name: "Apache Server", level: "Básico", icon: '<img src="icones SVG/apache.svg" class="h-6 w-6"/>' },
+      {
+        name: "Linux",
+        level: "Básico",
+        icon: '<img src="icones SVG/linux.svg" class="h-6 w-6"/>',
+      },
+      {
+        name: "AWS",
+        level: "Básico",
+        icon: '<img src="icones SVG/aws.svg" class="h-6 w-6"/>',
+      },
+      {
+        name: "Git",
+        level: "Avançado",
+        icon: '<img src="icones SVG/git.svg" class="h-6 w-6"/>',
+      },
+      {
+        name: "Apache Server",
+        level: "Básico",
+        icon: '<img src="icones SVG/apache.svg" class="h-6 w-6"/>',
+      },
     ],
   },
 ];
@@ -131,63 +193,49 @@ const technologies = [
 const blogPosts = [
   {
     id: 1,
-    title: "Building Scalable React Applications",
+    title: "Evento de IA com AWS",
     excerpt:
-      "Learn the best practices for structuring large React applications with proper state management and component architecture.",
+      "Aprenda as melhores práticas para estruturar grandes aplicações React com gerenciamento de estado adequado e arquitetura de componentes.",
     date: "2024-01-15",
-    readTime: "8 min read",
-    tags: ["React", "Architecture", "Best Practices"],
-    image: "teste.jpg",
+    tags: ["Cloud", "AWS", "IA"],
+    image: "images/teste.jpg",
   },
   {
     id: 2,
-    title: "Next.js 14: What's New and Exciting",
+    title: "Leitura do Livro Clear Code",
     excerpt:
-      "Explore the latest features in Next.js 14, including improved performance, new APIs, and enhanced developer experience.",
+      "Uma análise aprofundada do livro 'Clean Code' de Robert C. Martin, com foco em princípios de design e melhores práticas de codificação.",
     date: "2024-01-10",
-    readTime: "6 min read",
-    tags: ["Next.js", "React", "Web Development"],
-    image: "teste.png",
+    tags: ["Clean Code", "Design Patterns", "Coding Practices"],
+    image: "images/teste.png",
   },
   {
     id: 3,
-    title: "TypeScript Tips for Better Code Quality",
+    title:
+      "Cursos para aprimorar suas habilidades em Angular, Laravel e TypeScript",
     excerpt:
-      "Discover advanced TypeScript techniques that will help you write more maintainable and type-safe code.",
+      "Descubra técnicas avançadas de TypeScript que o ajudarão a escrever um código mais sustentável e seguro em termos de tipos.",
     date: "2024-01-05",
-    readTime: "10 min read",
-    tags: ["TypeScript", "Code Quality", "Development"],
-    image: "teste.jpg",
+    tags: ["TypeScript", "Qualidade de Código", "Desenvolvimento"],
+    image: "images/teste.jpg",
   },
   {
     id: 4,
-    title: "Optimizing Web Performance in 2024",
+    title: "Projeto SIGAF",
     excerpt:
-      "A comprehensive guide to modern web performance optimization techniques and tools.",
+      "Projeto de Gerenciamento de pratrimônio público, controle de estoque, compras e vendas.",
     date: "2023-12-28",
-    readTime: "12 min read",
     tags: ["Performance", "Optimization", "Web Development"],
-    image: "teste.png",
+    image: "images/teste.png",
   },
   {
     id: 5,
-    title: "The Future of CSS: Container Queries and More",
+    title: "Ceminarios de Qualidade ISO 9001, anticorrupção e LGPD",
     excerpt:
-      "Explore the latest CSS features that are changing how we approach responsive design and layout.",
+      "Explore as últimas novidades sobre a ISO 9001, práticas de anticorrupção e conformidade com a LGPD.",
     date: "2023-12-20",
-    readTime: "7 min read",
-    tags: ["CSS", "Responsive Design", "Frontend"],
-    image: "teste.png",
-  },
-  {
-    id: 6,
-    title: "Building APIs with Node.js and Express",
-    excerpt:
-      "A step-by-step guide to creating robust and scalable APIs using Node.js and Express framework.",
-    date: "2023-12-15",
-    readTime: "15 min read",
-    tags: ["Node.js", "Express", "API Development"],
-    image: "teste.png",
+    tags: ["ISO 9001", "Anticorrupção", "LGPD"],
+    image: "images/teste.png",
   },
 ];
 
@@ -219,7 +267,7 @@ const additionalSkills = [
   "CI/CD",
   "Code Review",
   "Technical Writing",
-  "Team Leadership"
+  "Team Leadership",
 ];
 
 // Initialize Lucide icons
@@ -238,8 +286,7 @@ function initTheme() {
       html.classList.contains("dark") ? "dark" : "light"
     );
     lucide.createIcons();
-      window.location.reload();
-
+    window.location.reload();
   }
 
   themeToggle.addEventListener("click", toggleTheme);
@@ -339,8 +386,9 @@ function generateProjects() {
                     }" style="animation-delay: ${index * 100}ms;">
                         <div class="relative overflow-hidden rounded-t-lg group">
                             <img src="${
-                              project.image ||
-                              "/placeholder.svg?height=200&width=400"
+                              Array.isArray(project.image)
+                                ? project.image[0]
+                                : project.image
                             }" alt="${
           project.title
         }" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
@@ -349,7 +397,7 @@ function generateProjects() {
                                   project.id
                                 })" class="btn-primary px-4 py-2 rounded-md mr-2">
                                     <i data-lucide="eye" class="mr-2 h-4 w-4"></i>
-                                    View Details
+                                    Ver Detalhes
                                 </button>
                             </div>
                         </div>
@@ -375,28 +423,36 @@ function generateProjects() {
                                   .join("")}
                                 ${
                                   project.technologies.length > 3
-                                    ? `<span class="badge badge-outline text-xs">+${
+                                    ? `<span class="badge badge-outline text-xs"> + ${
                                         project.technologies.length - 3
-                                      } more</span>`
+                                      }</span>`
                                     : ""
                                 }
                             </div>
                             <div class="flex gap-2">
-                                <a href="${
-                                  project.demoUrl
-                                }" target="_blank" rel="noopener noreferrer" class="btn-outline px-4 py-2 rounded-md text-sm">
-                                    <i data-lucide="external-link" class="mr-2 h-4 w-4"></i>
-                                    Demo
-                                </a>
-                                <a href="${
-                                  project.githubUrl
-                                }" target="_blank" rel="noopener noreferrer" class="btn-outline px-4 py-2 rounded-md text-sm">
-                                    <i data-lucide="github" class="mr-2 h-4 w-4"></i>
-                                    Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                                <a 
+                ${
+                  project.demoUrl === ""
+                    ? "onclick='openProjetoIndisponivel()'"
+                    : 'href="' + project.demoUrl + '"'
+                } 
+                target="_blank" rel="noopener noreferrer" class="btn-primary px-6 py-3 rounded-md">
+                  <i data-lucide="external-link" class="mr-2 h-4 w-4"></i>
+                  Ver Demo
+                </a>
+                <a 
+                ${
+                  project.githubUrl === ""
+                    ? "onclick='openProjetoIndisponivel()'"
+                    : 'href="' + project.githubUrl + '"'
+                }
+                target="_blank" rel="noopener noreferrer" class="btn-outline px-6 py-3 rounded-md">
+                  <i data-lucide="github" class="mr-2 h-4 w-4"></i>
+                  Visualizar Código
+                </a>
+                                    </div>
+                                </div>
+              </div>
                 `
       )
       .join("");
@@ -422,6 +478,23 @@ function generateProjects() {
   renderProjects();
 }
 
+const modalProjetoIndisponivel = document.getElementById(
+  "modalProjetoIndisponivel"
+);
+const closeProjetoIndisponivel = document.getElementById(
+  "closeProjetoIndisponivel"
+);
+
+function openProjetoIndisponivel() {
+  modalProjetoIndisponivel.classList.remove("hidden");
+  document.body.style.overflow = "hidden";
+
+}
+closeProjetoIndisponivel.addEventListener("click", () => {
+  modalProjetoIndisponivel.classList.add("hidden");
+  document.body.style.overflow = "auto";
+});
+
 // Project modal
 function openProjectModal(projectId) {
   const project = projects.find((p) => p.id === projectId);
@@ -430,50 +503,133 @@ function openProjectModal(projectId) {
   const modal = document.getElementById("project-modal");
   const modalContent = document.getElementById("modal-content");
 
-  modalContent.innerHTML = `
-                <h2 class="text-2xl font-bold text-foreground mb-4">${
-                  project.title
-                }</h2>
-                <p class="text-muted-foreground text-base mb-6">${
-                  project.longDescription
-                }</p>
-                <img src="${
-                  project.image || "/placeholder.svg?height=300&width=600"
-                }" alt="${
-    project.title
-  }" class="w-full h-64 object-cover rounded-lg mb-6">
-                <div class="space-y-4">
-                    <div>
-                        <h4 class="font-semibold mb-2">Technologies Used:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            ${project.technologies
-                              .map(
-                                (tech) =>
-                                  `<span class="badge badge-secondary">${tech}</span>`
-                              )
-                              .join("")}
-                        </div>
-                    </div>
-                    <div class="flex gap-4 pt-4">
-                        <a href="${
-                          project.demoUrl
-                        }" target="_blank" rel="noopener noreferrer" class="btn-primary px-6 py-3 rounded-md">
-                            <i data-lucide="external-link" class="mr-2 h-4 w-4"></i>
-                            View Live Demo
-                        </a>
-                        <a href="${
-                          project.githubUrl
-                        }" target="_blank" rel="noopener noreferrer" class="btn-outline px-6 py-3 rounded-md">
-                            <i data-lucide="github" class="mr-2 h-4 w-4"></i>
-                            View Source Code
-                        </a>
-                    </div>
-                </div>
-            `;
+  // Certifique-se de que project.images seja um array de URLs de imagem
+  const images = Array.isArray(project.image) ? project.image : [project.image]; // Se 'project.images' não for um array, cria um com a única imagem
 
+  // Carrossel de imagens com loop 'for'
+  let carouselContent = "";
+  for (let i = 0; i < images.length; i++) {
+    carouselContent += `
+      <div class="carousel-item w-full">
+        <img src="${images[i]}" alt="Image ${
+      i + 1
+    }" class="w-full object-cover rounded-lg mb-6">
+      </div>`;
+  }
+
+  const carousel = `
+    <div id="indicators-carousel" class="relative w-full" data-carousel="static">
+      <div class="flex overflow-hidden">
+        ${carouselContent}
+      </div>
+      <button id="prev" type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+            </svg>
+            <span class="sr-only">Previous</span>
+        </span>
+    </button>
+      <button id="next" type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg>
+            <span class="sr-only">Next</span>
+        </span>
+    </button>
+    </div>
+  `;
+
+  modalContent.innerHTML = `
+    <h2 class="text-2xl font-bold text-foreground mb-4">${project.title}</h2>
+    <p class="text-muted-foreground text-base mb-6">${
+      project.longDescription
+    }</p>
+    
+    ${carousel}
+
+    <div class="space-y-4">
+      <div>
+        <h4 class="font-semibold mb-2">Tecnologias Utilizadas:</h4>
+        <div class="flex flex-wrap gap-2">
+          ${project.technologies
+            .map((tech) => `<span class="badge badge-secondary">${tech}</span>`)
+            .join("")}
+        </div>
+      </div>
+      <div class="flex gap-4 pt-4">
+        <a 
+        ${
+          project.demoUrl === ""
+            ? "onclick='openProjetoIndisponivel()'"
+            : 'href="' + project.demoUrl + '"'
+        } 
+        target="_blank" rel="noopener noreferrer" class="btn-primary px-6 py-3 rounded-md">
+          <i data-lucide="external-link" class="mr-2 h-4 w-4"></i>
+          Ver Demo
+        </a>
+        <a 
+        ${
+          project.githubUrl === ""
+            ? "onclick='openProjetoIndisponivel()'"
+            : 'href="' + project.githubUrl + '"'
+        }
+        target="_blank" rel="noopener noreferrer" class="btn-outline px-6 py-3 rounded-md">
+          <i data-lucide="github" class="mr-2 h-4 w-4"></i>
+          Visualizar Código
+        </a>
+      </div>
+    </div>
+  `;
+
+  // Abrir o modal
   modal.classList.add("active");
-  document.body.style.overflow = "hidden";
-  lucide.createIcons();
+  document.body.style.overflow = "hidden"; // Impede o scroll de fundo
+
+  // Adicionar funcionalidade de fechar o modal ao clicar fora dele
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeProjectModal();
+    }
+  });
+
+  // Controlar navegação do carrossel
+  let currentIndex = 0;
+  const totalImages = images.length;
+
+  const prevButton = document.getElementById("prev");
+  const nextButton = document.getElementById("next");
+
+  // Atualizar o carrossel para exibir a imagem correta
+  function updateCarousel() {
+    const items = document.querySelectorAll(".carousel-item");
+
+    // Ocultar todas as imagens e exibir a imagem correspondente ao índice
+    items.forEach((item, index) => {
+      if (index === currentIndex) {
+        item.classList.remove("hidden");
+      } else {
+        item.classList.add("hidden");
+      }
+    });
+  }
+
+  // Navegar para a imagem anterior
+  prevButton.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+    updateCarousel();
+  });
+
+  // Navegar para a próxima imagem
+  nextButton.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % totalImages;
+    updateCarousel();
+  });
+
+  updateCarousel(); // Iniciar com a primeira imagem visível
+
+  lucide.createIcons(); // Cria os ícones usando lucide (como o ícone do GitHub e demo)
 }
 
 function closeProjectModal() {
@@ -511,11 +667,11 @@ function generateTechnologies() {
                     <p class="text-muted-foreground mb-6">${
                       category.description
                     }</p>
-                    <div class="space-y-4">
+                    <div class="space-y-4 ">
                         ${category.skills
                           .map(
                             (skill, skillIndex) => `
-                            <div class="flex items-center justify-between p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors" style="animation-delay: ${
+                            <div class="flex items-center justify-between p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors cards-skill" style="animation-delay: ${
                               categoryIndex * 200 + skillIndex * 50
                             }ms;">
                                 <div class="flex items-center space-x-3">

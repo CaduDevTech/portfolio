@@ -30,6 +30,10 @@ const projects = [
     demoUrl: "",
     githubUrl: "",
     category: "Full Stack",
+    mensagem: [
+      "Em desenvolvimento...",
+      "Esta funcionalidade ainda não foi aberta ao público para esse projeto.<br>Em breve estará disponível!",
+    ],
   },
   {
     id: 2,
@@ -37,36 +41,49 @@ const projects = [
     description:
       "Plataforma de notícias com funcionalidades completas de autenticação e registro de usuários, implementada com alto nível de segurança, abrangendo criptografia de dados, proteção contra CSRF, prevenção de injeções SQL, e mitigação de vulnerabilidades XSS.",
     longDescription:
-      "Desenvolvimento de um protótipo de site de notícias, permitindo que os usuários se autentiquem, publiquem, editem e excluam suas publicações. Este projeto, com o objetivo de ser acessível ao público, foi desenvolvido com rigorosas medidas de segurança no código, incluindo proteção contra vulnerabilidades como CSRF, injeção de SQL e XSS.",
+      "Plataforma voltada para a criação e gerenciamento de notícias, permitindo que os usuários se autentiquem, publiquem, editem e excluam suas publicações. O sistema foi desenvolvido com rigorosas medidas de segurança no código, garantindo a proteção contra vulnerabilidades como CSRF, injeção de SQL e XSS. Ideal para sites de notícias que buscam uma plataforma segura e intuitiva para gerenciar conteúdo de forma eficiente.<br><br><b>🎯 Funcionalidades principais</b><br><b>Autenticação de usuários:</b> Cadastro, login e gerenciamento de sessões.<br><b>Publicação de notícias:</b> Publicação, edição e exclusão de conteúdos.<br><b>Segurança avançada:</b> Proteção contra vulnerabilidades como CSRF, injeção de SQL e XSS.<br><b>Gestão de conteúdo:</b> Interface intuitiva para facilitar a criação e modificação das publicações.<br><b>Controle de permissões:</b> Definição de acessos para diferentes tipos de usuários.<br><br><b>🧱 Tecnologias</b><b><br>🧠 Backend:</b> PHP, MySQL<br><b>📱 Frontend:</b> Bootstrap<br><br><b>🧪 Status:</b> Protótipo inicial, com foco em aprendizado e segurança.<b><br><br>🟢 Metodologia:</b> O sistema foi desenvolvido de forma prática, com foco em segurança e usabilidade, visando a construção de um protótipo funcional, mas sem seguir uma metodologia de desenvolvimento estruturada.",
     image: "images/teste.png",
     technologies: ["PHP", "Bootstrap", "MySQL", "JavaScript", "HTML", "CSS"],
-    demoUrl: "https://tasks.example.com",
+    demoUrl: "",
     githubUrl: "https://github.com/johndoe/taskmanager",
     category: "Full Stack",
+    mensagem: [
+      "Não está disponível...",
+      "Este projeto não tem um link de demonstração disponível!",
+    ],
   },
   {
     id: 3,
     title: "Sistema de ADM de Loja",
-    description: "Sistema de gestão para gerenciar funcionários, clientes, produtos e vendas. O sistema rastreia todas as transações, desde o funcionário que realizou a venda até o produto e cliente envolvidos, oferecendo relatórios detalhados e facilitando a gestão da loja.",
+    description:
+      "Sistema de gestão para gerenciar funcionários, clientes, produtos e vendas. O sistema rastreia todas as transações, desde o funcionário que realizou a venda até o produto e cliente envolvidos, oferecendo relatórios detalhados e facilitando a gestão da loja.",
     longDescription:
-      "Plataforma completa para gestão de lojas com controle de clientes, funcionários, produtos e vendas. O Sistema de Administração de Lojas oferece uma solução completa para otimizar os processos administrativos, proporcionando o controle total do ciclo de vida dos produtos e a gestão eficiente das operações diárias. Ideal para lojas de todos os portes que buscam automatizar e agilizar as tarefas diárias, melhorar a produtividade e garantir a segurança das informações.<br><br><b>🎯 Funcionalidades principais</b><br>Gestão completa de clientes: Cadastro, atualização e histórico de compras.<br>Gestão de funcionários: Cadastro, controle de acessos e performance de vendas.<br>Gestão de produtos: Controle de estoque, atualização de preços e relatórios detalhados.<br>Gestão de vendas: Registro de vendas<br>Relatórios e Análises: Relatórios detalhados de vendas, estoque e desempenho.<br><br><b>🧱 Tecnologias</b><br><b>🧠 Backend:</b> MySQL, C#<br><b>📱 Frontend:</b> Windows Forms<br><br><b>🧪 Status:</b> Descontinuado, porém tenho interese em trabalhar com C#<br><br><b>🟢 Metodologia:</b> O sistema não seguiu uma metodologia de desenvolvimento definida, pois foi um dos meus primeiros projetos sérios, e na época eu não tinha conhecimento sobre metodologias eficazes para organização de código.",
-    image: "images/teste.png",
+      "Plataforma completa para gestão de lojas com controle de clientes, funcionários, produtos e vendas. O Sistema de Administração de Lojas oferece uma solução completa para otimizar os processos administrativos, proporcionando o controle total do ciclo de vida dos produtos e a gestão eficiente das operações diárias. Ideal para lojas de todos os portes que buscam automatizar e agilizar as tarefas diárias, melhorar a produtividade e garantir a segurança das informações.<br><br><b>🎯 Funcionalidades principais</b><br>Gestão completa de clientes: Cadastro, atualização e histórico de compras.<br>Gestão de funcionários: Cadastro, controle de acessos e performance de vendas.<br>Gestão de produtos: Controle de estoque, atualização de preços e relatórios detalhados.<br>Gestão de vendas: Registro de vendas<br>Relatórios e Análises: Relatórios detalhados de vendas, estoque e desempenho.<br>Validações de CPF e CNPJ<br>Verificação de validade de CEP, trazendo os dados do mesmo<br><br><b>🧱 Tecnologias</b><br><b>🧠 Backend:</b> MySQL, C#<br><b>📱 Frontend:</b> Windows Forms<br><br><b>🧪 Status:</b> Descontinuado, porém tenho interese em trabalhar com C#<br><br><b>🟢 Metodologia:</b> O sistema não seguiu uma metodologia de desenvolvimento definida, pois foi um dos meus primeiros projetos sérios, e na época eu não tinha conhecimento sobre metodologias eficazes para organização de código.",
+    image: ["images/sistema_adm_loja.png", "images/sistema_adm_loja_db.png", "videos/sistema_adm_loja.mp4"],
     technologies: ["C#", "Windows Forms", "MySQL", "Visual Studio"],
-    demoUrl: "https://weather.example.com",
+    demoUrl: "",
     githubUrl: "https://github.com/johndoe/weather",
     category: "Full Stack",
+    mensagem: [
+      "Não está disponível...",
+      "Este projeto não tem um link de demonstração disponível!",
+    ],
   },
   {
     id: 4,
     title: "Portfolio Website",
-    description: "Responsive portfolio site with smooth animations",
+    description: "Portifolio completo com animações, efeitos de cabeçalho e design moderno. Seguindo os padrões de UI/UX moderno.",
     longDescription:
       "Portfólio Pessoal em HTML, CSS, Tailwind, Animista e FinisherHeader. Este portfólio foi desenvolvido como uma vitrine pessoal para apresentar meus projetos e habilidades no desenvolvimento web. Utilizando tecnologias modernas, como HTML, CSS, Tailwind CSS, Animista para animações e FinisherHeader para efeitos de cabeçalho, o site foi projetado para ser visualmente atrativo e responsivo, oferecendo uma navegação fluida e agradável.<br><br><b>🎯 Funcionalidades principais</b><br>Design Responsivo: Adaptável a diferentes dispositivos e tamanhos de tela.<br>Animações Elegantes: Integração com Animista para transições e efeitos visuais interativos.<br>Estilização Moderna: Utilização do framework Tailwind CSS para um design limpo e fácil de manter.<br>Cabeçalho Personalizado: Efeitos de cabeçalho dinâmico com FinisherHeader, oferecendo uma experiência visual imersiva.<br><br><b>🧱 Tecnologias</b><br><b>💻 Frontend:</b> HTML, CSS, Tailwind CSS<br><b>✨ Animações:</b> Animista<br><b>🔧 Efeitos de Cabeçalho:</b> FinisherHeader<br><br><b>🧪 Status:</b> Portfólio em produção, com todas as funcionalidades principais implementadas, incluindo animações interativas e design responsivo. Em constante atualização para refletir novos projetos e melhorias.<br><br><b>🟢 Metodologia:</b> Desenvolvido com foco em design moderno e experiências de usuário dinâmicas. O projeto foi construído de forma ágil, priorizando a usabilidade e otimização para uma navegação sem falhas em dispositivos móveis e desktops.",
-    image: "images/teste.png",
+    image: "images/portifolio.png",
     technologies: ["HTML", "CSS", "Tailwind CSS", "Animista", "FinisherHeader"],
-    demoUrl: "https://portfolio.example.com",
+    demoUrl: "",
     githubUrl: "https://github.com/johndoe/portfolio",
     category: "Frontend",
+    mensagem: [
+      "Em desenvolvimento...",
+      "Esta funcionalidade ainda não foi aberta ao público para esse projeto.<br>Em breve estará disponível!",
+    ],
   },
   {
     id: 6,
@@ -79,6 +96,10 @@ const projects = [
     demoUrl: "https://api.example.com",
     githubUrl: "https://github.com/johndoe/api-gateway",
     category: "Backend",
+    mensagem: [
+      "Em desenvolvimento...",
+      "Esta funcionalidade ainda não foi aberta ao público para esse projeto.<br>Em breve estará disponível!",
+    ],
   },
 ];
 
@@ -181,49 +202,52 @@ const technologies = [
 const blogPosts = [
   {
     id: 1,
-    title: "Evento de IA com AWS",
+    title: "Evento BAH-IA 2024",
     excerpt:
-      "Aprenda as melhores práticas para estruturar grandes aplicações React com gerenciamento de estado adequado e arquitetura de componentes.",
-    date: "2024-01-15",
-    tags: ["Cloud", "AWS", "IA"],
-    image: "images/teste.jpg",
+      "Foram trazidas algumas aplicações inovadoras da IA em negócios e em plataformas de streaming. Foi uma experiência extremamente enriquecedora, com palestras que agregaram muito ao meu conhecimento e ampliaram minha visão sobre o futuro da tecnologia.",
+    date: "2025-09-15",
+    tags: ["IA", "Machine Learning", "IA em Negócios"],
+    image: "images/bahia_ia_inicial.png",
+    url: "https://www.linkedin.com/posts/carlos-eduardo-tecnologia_participei-recentemente-do-evento-de-intelig%C3%AAncia-activity-7377841874314752000-rKgX?utm_source=share&utm_medium=member_desktop&rcm=ACoAADtzvM8B1xWBqruxDwP84CqRK8B8LSu68TY",
   },
   {
     id: 2,
     title: "Leitura do Livro Clear Code",
     excerpt:
       "Uma análise aprofundada do livro 'Clean Code' de Robert C. Martin, com foco em princípios de design e melhores práticas de codificação.",
-    date: "2024-01-10",
+    date: "2024-08-01",
     tags: ["Clean Code", "Design Patterns", "Coding Practices"],
-    image: "images/teste.png",
+    image: "images/clean_code_blog.png",
+    url: "https://www.linkedin.com/posts/carlos-eduardo-tecnologia_progamaaexaeto-csharp-javascript-activity-7211875555321774080-6Qwz?utm_source=share&utm_medium=member_desktop&rcm=ACoAADtzvM8B1xWBqruxDwP84CqRK8B8LSu68TY",
   },
   {
     id: 3,
-    title:
-      "Cursos para aprimorar suas habilidades em Angular, Laravel e TypeScript",
+    title: "Cursos para aprimorar suas habilidades em Angular, Laravel e GIT",
     excerpt:
-      "Descubra técnicas avançadas de TypeScript que o ajudarão a escrever um código mais sustentável e seguro em termos de tipos.",
-    date: "2024-01-05",
-    tags: ["TypeScript", "Qualidade de Código", "Desenvolvimento"],
-    image: "images/teste.jpg",
+      "Concluçãos dos cursos de Angular e GIT e andamento do curso de laravel para aprimorar minhas habilidades em desenvolvimento web.",
+    date: "2025-08",
+    tags: ["Angular", "Laravel", "GIT"],
+    image: "images/cursos_blog.jpg",
+    url: "https://www.linkedin.com/in/carlos-eduardo-tecnologia/details/certifications/",
   },
   {
     id: 4,
-    title: "Projeto SIGAF",
+    title: "Evento da Emaster sobre IA Generativa com AWS",
     excerpt:
-      "Projeto de Gerenciamento de pratrimônio público, controle de estoque, compras e vendas.",
-    date: "2023-12-28",
-    tags: ["Performance", "Optimization", "Web Development"],
-    image: "images/teste.png",
+      "Tive a oportunidade de participar de um evento organizado pela eMaster , com foco em IA generativa, especificamente utilizando as soluções da Amazon Web Services (AWS) . ",
+    date: "2024-09",
+    tags: ["AWS", "IA", "IA Generativa"],
+    image: "images/evento_emaster.png",
+    url: "https://www.linkedin.com/posts/carlos-eduardo-tecnologia_ia-inteligenciaartificial-iagenerativa-activity-7239652107249709056-ygF-?utm_source=share&utm_medium=member_desktop&rcm=ACoAADtzvM8B1xWBqruxDwP84CqRK8B8LSu68TY",
   },
   {
     id: 5,
-    title: "Ceminarios de Qualidade ISO 9001, anticorrupção e LGPD",
-    excerpt:
-      "Explore as últimas novidades sobre a ISO 9001, práticas de anticorrupção e conformidade com a LGPD.",
-    date: "2023-12-20",
-    tags: ["ISO 9001", "Anticorrupção", "LGPD"],
+    title: "Seminários  Sobre Antisuborno e Anticorrupção",
+    excerpt: "Seminario dado pela Produs sobre Antisuborno e Anticorrupção",
+    date: "2025-09-20",
+    tags: ["Antisuborno", "Anticorrupção"],
     image: "images/teste.png",
+    url: "",
   },
 ];
 
@@ -554,7 +578,6 @@ function openProjectModal(projectId) {
     <p class="text-muted-foreground text-base mb-6">${
       project.longDescription
     }</p>
-    
     ${carousel}
 
     <div class="space-y-4">
@@ -568,25 +591,26 @@ function openProjectModal(projectId) {
       </div>
       <div class="flex gap-4 pt-4">
         <a 
-        ${
-          project.demoUrl === ""
-            ? "onclick='openProjetoIndisponivel()'"
-            : 'href="' + project.demoUrl + '"'
-        } 
-        target="_blank" rel="noopener noreferrer" class="btn-primary px-6 py-3 rounded-md">
-          <i data-lucide="external-link" class="mr-2 h-4 w-4"></i>
-          Ver Demo
-        </a>
-        <a 
-        ${
-          project.githubUrl === ""
-            ? "onclick='openProjetoIndisponivel()'"
-            : 'href="' + project.githubUrl + '"'
-        }
-        target="_blank" rel="noopener noreferrer" class="btn-outline px-6 py-3 rounded-md">
-          <i data-lucide="github" class="mr-2 h-4 w-4"></i>
-          Visualizar Código
-        </a>
+  ${
+    project.demoUrl === ""
+      ? `onclick="openIndisponivel('${project.mensagem[0]}', '${project.mensagem[1]}')"`
+      : `href="${project.demoUrl}"`
+  } 
+  target="_blank" rel="noopener noreferrer" class="btn-primary px-6 py-3 rounded-md">
+    <i data-lucide="external-link" class="mr-2 h-4 w-4"></i>
+    Ver Demo
+</a>
+       <a 
+  ${
+    project.githubUrl === ""
+      ? `onclick="openIndisponivel('${project.mensagem[0]}', '${project.mensagem[1]}')"`
+      : `href="${project.githubUrl}"`
+  } 
+  target="_blank" rel="noopener noreferrer" class="btn-outline px-6 py-3 rounded-md">
+    <i data-lucide="github" class="mr-2 h-4 w-4"></i>
+    Visualizar Código
+</a>
+
       </div>
     </div>
   `;
@@ -671,6 +695,7 @@ function closeProjectModal() {
   const modal = document.getElementById("project-modal");
   modal.classList.remove("active");
   document.body.style.overflow = "auto";
+  
 }
 
 // Generate technologies
@@ -734,10 +759,9 @@ function generateBlogPosts() {
   const blogGrid = document.getElementById("blog-grid");
 
   function formatDate(dateString) {
-    return new Date(dateString).toLocaleDateString("en-US", {
+    return new Date(dateString).toLocaleDateString("PT-BR", {
       year: "numeric",
       month: "long",
-      day: "numeric",
     });
   }
 
@@ -760,10 +784,6 @@ function generateBlogPosts() {
                                 <i data-lucide="calendar" class="mr-1 h-4 w-4"></i>
                                 ${formatDate(post.date)}
                             </div>
-                            <div class="flex items-center">
-                                <i data-lucide="clock" class="mr-1 h-4 w-4"></i>
-                                ${post.readTime}
-                            </div>
                         </div>
                         <h3 class="text-lg font-semibold text-foreground group-hover:text-accent transition-colors mb-3">${
                           post.title
@@ -779,10 +799,12 @@ function generateBlogPosts() {
                               )
                               .join("")}
                         </div>
-                        <button class="btn-ghost p-0 h-auto group/button">
-                            Read More
+                        <a href="${
+                          post.url
+                        }" target="_blank" class="btn-ghost p-0 h-auto group/button">
+                            Ler mais
                             <i data-lucide="arrow-right" class="ml-2 h-4 w-4 group-hover/button:translate-x-1 transition-transform"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
             `
@@ -824,3 +846,4 @@ document.addEventListener("DOMContentLoaded", () => {
 window.scrollToSection = scrollToSection;
 window.openProjectModal = openProjectModal;
 window.closeProjectModal = closeProjectModal;
+

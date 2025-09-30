@@ -419,25 +419,26 @@ function generateProjects() {
                             </div>
                             <div class="flex gap-2">
                                 <a 
-                ${
-                  project.demoUrl === ""
-                    ? "onclick='openProjetoIndisponivel()'"
-                    : 'href="' + project.demoUrl + '"'
-                } 
-                target="_blank" rel="noopener noreferrer" class="btn-primary px-6 py-3 rounded-md">
-                  <i data-lucide="external-link" class="mr-2 h-4 w-4"></i>
-                  Ver Demo
-                </a>
+  ${
+    project.demoUrl === ""
+      ? `onclick="openIndisponivel('${project.mensagem[0]}', '${project.mensagem[1]}')"`
+      : `href="${project.demoUrl}"`
+  } 
+  target="_blank" rel="noopener noreferrer" class="btn-primary px-6 py-3 rounded-md">
+    <i data-lucide="external-link" class="mr-2 h-4 w-4"></i>
+    Ver Demo
+</a>
                 <a 
-                ${
-                  project.githubUrl === ""
-                    ? "onclick='openProjetoIndisponivel()'"
-                    : 'href="' + project.githubUrl + '"'
-                }
-                target="_blank" rel="noopener noreferrer" class="btn-outline px-6 py-3 rounded-md">
-                  <i data-lucide="github" class="mr-2 h-4 w-4"></i>
-                  Visualizar Código
-                </a>
+  ${
+    project.githubUrl === ""
+      ? `onclick="openIndisponivel('${project.mensagem[0]}', '${project.mensagem[1]}')"`
+      : `href="${project.githubUrl}"`
+  } 
+  target="_blank" rel="noopener noreferrer" class="btn-outline px-6 py-3 rounded-md">
+    <i data-lucide="github" class="mr-2 h-4 w-4"></i>
+    Visualizar Código
+</a>
+
                                     </div>
                                 </div>
               </div>
@@ -466,68 +467,87 @@ function generateProjects() {
   renderProjects();
 }
 
-const modalProjetoIndisponivel = document.getElementById(
-  "modalProjetoIndisponivel"
-);
-const closeProjetoIndisponivel = document.getElementById(
-  "closeProjetoIndisponivel"
-);
+const modalIndisponivel = document.getElementById("modalIndisponivel");
+const closeIndisponivel = document.getElementById("closeIndisponivel");
 
-function openProjetoIndisponivel() {
-  modalProjetoIndisponivel.classList.remove("hidden");
+function openIndisponivel($title, $description) {
+  const modalIndisponivelMensagemTitle = document.getElementById(
+    "modalIndisponivelMensagemTitle"
+  );
+  const modalIndisponivelMensagemDescription = document.getElementById(
+    "modalIndisponivelMensagemDescription"
+  );
+
+  modalIndisponivelMensagemTitle.innerHTML = $title;
+  modalIndisponivelMensagemDescription.innerHTML = $description;
+
+  modalIndisponivel.classList.remove("hidden");
   document.body.style.overflow = "hidden";
-
 }
-closeProjetoIndisponivel.addEventListener("click", () => {
-  modalProjetoIndisponivel.classList.add("hidden");
+closeIndisponivel.addEventListener("click", () => {
+  modalIndisponivel.classList.add("hidden");
   document.body.style.overflow = "auto";
 });
 
-// Project modal
 function openProjectModal(projectId) {
+
   const project = projects.find((p) => p.id === projectId);
   if (!project) return;
 
+
   const modal = document.getElementById("project-modal");
   const modalContent = document.getElementById("modal-content");
+  
 
-  // Certifique-se de que project.images seja um array de URLs de imagem
+  // Certifique-se de que project.images seja um array de URLs de imagem ou vídeo
   const images = Array.isArray(project.image) ? project.image : [project.image]; // Se 'project.images' não for um array, cria um com a única imagem
 
-  // Carrossel de imagens com loop 'for'
+  // Carrossel de imagens/vídeos
   let carouselContent = "";
   for (let i = 0; i < images.length; i++) {
+    const isVideo = images[i].endsWith(".mp4");
     carouselContent += `
-      <div class="carousel-item w-full">
-        <img src="${images[i]}" alt="Image ${
-      i + 1
-    }" class="w-full object-cover rounded-lg mb-6">
+      <div class="carousel-item w-full ${i === 0 ? "" : "hidden"}">
+        ${
+          isVideo
+            ? `
+          <video disablepictureinpicture canplay class="w-full h-full object-cover rounded-lg mb-6" controls>
+            <source src="${images[i]}" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+          </video>
+        `
+            : `
+          <img src="${images[i]}" alt="Image ${
+                i + 1
+              }" class="w-full h-full object-cover rounded-lg mb-6">
+        `
+        }
       </div>`;
   }
 
-  const carousel = `
-    <div id="indicators-carousel" class="relative w-full" data-carousel="static">
-      <div class="flex overflow-hidden">
-        ${carouselContent}
-      </div>
-      <button id="prev" type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-            </svg>
-            <span class="sr-only">Previous</span>
-        </span>
-    </button>
-      <button id="next" type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-            </svg>
-            <span class="sr-only">Next</span>
-        </span>
-    </button>
+  const carousel = ` 
+  <div id="indicators-carousel" class="relative w-full" data-carousel="static">
+    <div class="flex overflow-hidden">
+      ${carouselContent}
     </div>
-  `;
+    <button id="prev" type="button" class="absolute top-1/2 left-0 z-30 flex items-center justify-center w-10 h-10 -translate-y-1/2 cursor-pointer group focus:outline-none" data-carousel-prev>
+      <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+        <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+        </svg>
+        <span class="sr-only">Previous</span>
+      </span>
+    </button>
+    <button id="next" type="button" class="absolute top-1/2 right-0 z-30 flex items-center justify-center w-10 h-10 -translate-y-1/2 cursor-pointer group focus:outline-none" data-carousel-next>
+      <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+        <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+        </svg>
+        <span class="sr-only">Next</span>
+      </span>
+    </button>
+  </div>
+`;
 
   modalContent.innerHTML = `
     <h2 class="text-2xl font-bold text-foreground mb-4">${project.title}</h2>
@@ -619,6 +639,33 @@ function openProjectModal(projectId) {
 
   lucide.createIcons(); // Cria os ícones usando lucide (como o ícone do GitHub e demo)
 }
+
+// Função para controlar o início do vídeo
+function handleVideoPlay(event) {
+  const video = event.target;
+
+  // Pausar todos os vídeos
+  const allVideos = document.querySelectorAll(".video-element");
+  allVideos.forEach((v) => {
+    if (v !== video) {
+      v.pause();
+    }
+  });
+
+  // Se o vídeo não estiver pausado, inicie-o
+  if (video.paused) {
+    video.play();
+  }
+}
+
+// Quando o conteúdo for renderizado, adicione o evento de clique aos vídeos
+document.addEventListener("DOMContentLoaded", () => {
+  // Adicionar evento de clique a todos os vídeos
+  const videos = document.querySelectorAll(".video-element");
+  videos.forEach((video) => {
+    video.addEventListener("click", handleVideoPlay); // Inicia o vídeo ao clicar
+  });
+});
 
 function closeProjectModal() {
   const modal = document.getElementById("project-modal");

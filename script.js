@@ -45,7 +45,7 @@ const projects = [
     image: "images/teste.png",
     technologies: ["PHP", "Bootstrap", "MySQL", "JavaScript", "HTML", "CSS"],
     demoUrl: "",
-    githubUrl: "https://github.com/johndoe/taskmanager",
+    githubUrl: "https://github.com/CaduDevTech/projeto_site_noticias",
     category: "Full Stack",
     mensagem: [
       "Não está disponível...",
@@ -62,7 +62,7 @@ const projects = [
     image: ["images/sistema_adm_loja.png", "images/sistema_adm_loja_db.png", "videos/sistema_adm_loja.mp4"],
     technologies: ["C#", "Windows Forms", "MySQL", "Visual Studio"],
     demoUrl: "",
-    githubUrl: "https://github.com/johndoe/weather",
+    githubUrl: "https://github.com/CaduDevTech/Sistema_de_Administracao_de_Loja",
     category: "Full Stack",
     mensagem: [
       "Não está disponível...",
@@ -78,11 +78,11 @@ const projects = [
     image: "images/portifolio.png",
     technologies: ["HTML", "CSS", "Tailwind CSS", "Animista", "FinisherHeader"],
     demoUrl: "",
-    githubUrl: "https://github.com/johndoe/portfolio",
+    githubUrl: "https://github.com/CaduDevTech/Portfolio",
     category: "Frontend",
     mensagem: [
-      "Em desenvolvimento...",
-      "Esta funcionalidade ainda não foi aberta ao público para esse projeto.<br>Em breve estará disponível!",
+      "Você está acessando o portifolio...",
+      "Você já está no portifolio, aproveite e navegue pelo site!",
     ],
   },
   {
@@ -202,7 +202,7 @@ const technologies = [
 const blogPosts = [
   {
     id: 1,
-    title: "Evento BAH-IA 2024",
+    title: "Evento BAH-IA Data Science 2025",
     excerpt:
       "Foram trazidas algumas aplicações inovadoras da IA em negócios e em plataformas de streaming. Foi uma experiência extremamente enriquecedora, com palestras que agregaram muito ao meu conhecimento e ampliaram minha visão sobre o futuro da tecnologia.",
     date: "2025-09-15",
@@ -216,7 +216,7 @@ const blogPosts = [
     excerpt:
       "Uma análise aprofundada do livro 'Clean Code' de Robert C. Martin, com foco em princípios de design e melhores práticas de codificação.",
     date: "2024-08-01",
-    tags: ["Clean Code", "Design Patterns", "Coding Practices"],
+    tags: ["Clean Code", "Design Patterns", "Boas Práticas de Codificação"],
     image: "images/clean_code_blog.png",
     url: "https://www.linkedin.com/posts/carlos-eduardo-tecnologia_progamaaexaeto-csharp-javascript-activity-7211875555321774080-6Qwz?utm_source=share&utm_medium=member_desktop&rcm=ACoAADtzvM8B1xWBqruxDwP84CqRK8B8LSu68TY",
   },
@@ -242,11 +242,11 @@ const blogPosts = [
   },
   {
     id: 5,
-    title: "Seminários  Sobre Antisuborno e Anticorrupção",
-    excerpt: "Seminario dado pela Produs sobre Antisuborno e Anticorrupção",
+    title: "Seminários  ISO 37001",
+    excerpt: "Seminario dado pela Produs sobre Antisuborno e Anticorrupção, com foco em ISO 37001.",
     date: "2025-09-20",
-    tags: ["Antisuborno", "Anticorrupção"],
-    image: "images/teste.png",
+    tags: ["Antisuborno", "Anticorrupção", "ISO 37001"],
+    image: "images/seminario_anticorrupcao.jpg",
     url: "",
   },
 ];

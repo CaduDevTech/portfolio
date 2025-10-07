@@ -209,6 +209,10 @@ body {
   color: hsl(var(--secondary-foreground));
 }
 
+.icon-svg {
+  display: none;
+}
+
 .badge-outline {
   border: 1px solid hsl(var(--border));
   background-color: transparent;

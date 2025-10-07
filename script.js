@@ -172,7 +172,7 @@ const technologies = [
     ],
   },
   {
-    category: "DevOps & Tools",
+    category: "DevOps & F",
     description: "Ferramentas e tecnologias de suporte",
     skills: [
       {
@@ -285,30 +285,38 @@ const additionalSkills = [
 // Initialize Lucide icons
 lucide.createIcons();
 
-// Theme functionality
 function initTheme() {
   const themeToggle = document.getElementById("theme-toggle");
   const themeToggleMobile = document.getElementById("theme-toggle-mobile");
+  const icon_sun = document.getElementById("sun-icon");
+  const icon_moon = document.getElementById("moon-icon");
   const html = document.documentElement;
 
   function toggleTheme() {
     html.classList.toggle("dark");
-    localStorage.setItem(
-      "theme",
-      html.classList.contains("dark") ? "dark" : "light"
-    );
-    lucide.createIcons();
-    window.location.reload();
+    localStorage.setItem("theme", html.classList.contains("dark") ? "dark" : "light");
+    
+    if (html.classList.contains("dark")) {
+    icon_sun.style.display = "block";
+    icon_moon.style.display = "none";
+    animateThemeSwitch();
+  }else{
+    icon_sun.style.display = "none";
+    icon_moon.style.display = "block";
+    animateThemeSwitch();
+  }
   }
 
-  themeToggle.addEventListener("click", toggleTheme);
-  themeToggleMobile.addEventListener("click", toggleTheme);
+  themeToggle?.addEventListener("click", toggleTheme);
+  themeToggleMobile?.addEventListener("click", toggleTheme);
 
-  // Load saved theme
   if (localStorage.getItem("theme") === "dark") {
     html.classList.add("dark");
   }
+
+  
 }
+
 
 // Mobile menu functionality
 function initMobileMenu() {
@@ -823,6 +831,7 @@ document.addEventListener("DOMContentLoaded", () => {
   generateProjects();
   generateTechnologies();
   generateBlogPosts();
+  animateThemeSwitch();
 
   // Modal close functionality
   document

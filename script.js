@@ -1,4 +1,6 @@
 // Data
+
+localStorage.setItem("theme", "dark");
 const nameElement = document.getElementById("hero-title");
 
 const observer = new ResizeObserver((entries) => {
@@ -172,7 +174,7 @@ const technologies = [
     ],
   },
   {
-    category: "DevOps & F",
+    category: "DevOps & Ferramentas",
     description: "Ferramentas e tecnologias de suporte",
     skills: [
       {
@@ -300,10 +302,15 @@ function initTheme() {
     icon_sun.style.display = "block";
     icon_moon.style.display = "none";
     animateThemeSwitch();
+       createThemeInstances();
+  animateThemeSwitch();
+    
   }else{
     icon_sun.style.display = "none";
     icon_moon.style.display = "block";
     animateThemeSwitch();
+       createThemeInstances();
+  animateThemeSwitch();
   }
   }
 
@@ -832,6 +839,8 @@ document.addEventListener("DOMContentLoaded", () => {
   generateTechnologies();
   generateBlogPosts();
   animateThemeSwitch();
+   createThemeInstances();
+  animateThemeSwitch();
 
   // Modal close functionality
   document
@@ -856,3 +865,11 @@ window.scrollToSection = scrollToSection;
 window.openProjectModal = openProjectModal;
 window.closeProjectModal = closeProjectModal;
 
+function teste(){
+   if(document.getElementById("finisher-canvas") == null){
+    console.log("finisher-canvas not found");
+    }else{
+    document.getElementById("finisher-canvas").remove();
+    }
+}
+   

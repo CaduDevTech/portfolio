@@ -222,7 +222,7 @@ const blogPosts = [
     id: 2,
     title: "Leitura do Livro Clear Code",
     excerpt:
-      "Uma análise aprofundada do livro 'Clean Code' de Robert C. Martin, com foco em princípios de design e melhores práticas de codificação.",
+      "A leitura do livro de Clean Code foi uma jornada de aprendizado profundo que me ajudou a melhorar minhas habilidades de codificação e aprimorar minha abordagem de desenvolvimento de software.",
     date: "2024-08-01",
     tags: ["Clean Code", "Design Patterns", "Boas Práticas de Codificação"],
     image: "images/clean_code_blog.png",

@@ -61,10 +61,15 @@ const projects = [
       "Sistema de gestão para gerenciar funcionários, clientes, produtos e vendas. O sistema rastreia todas as transações, desde o funcionário que realizou a venda até o produto e cliente envolvidos, oferecendo relatórios detalhados e facilitando a gestão da loja.",
     longDescription:
       "Plataforma completa para gestão de lojas com controle de clientes, funcionários, produtos e vendas. O Sistema de Administração de Lojas oferece uma solução completa para otimizar os processos administrativos, proporcionando o controle total do ciclo de vida dos produtos e a gestão eficiente das operações diárias. Ideal para lojas de todos os portes que buscam automatizar e agilizar as tarefas diárias, melhorar a produtividade e garantir a segurança das informações.<br><br><b>🎯 Funcionalidades principais</b><br>Gestão completa de clientes: Cadastro, atualização e histórico de compras.<br>Gestão de funcionários: Cadastro, controle de acessos e performance de vendas.<br>Gestão de produtos: Controle de estoque, atualização de preços e relatórios detalhados.<br>Gestão de vendas: Registro de vendas<br>Relatórios e Análises: Relatórios detalhados de vendas, estoque e desempenho.<br>Validações de CPF e CNPJ<br>Verificação de validade de CEP, trazendo os dados do mesmo<br><br><b>🧱 Tecnologias</b><br><b>🧠 Backend:</b> MySQL, C#<br><b>📱 Frontend:</b> Windows Forms<br><br><b>🧪 Status:</b> Descontinuado, porém tenho interese em trabalhar com C#<br><br><b>🟢 Metodologia:</b> O sistema não seguiu uma metodologia de desenvolvimento definida, pois foi um dos meus primeiros projetos sérios, e na época eu não tinha conhecimento sobre metodologias eficazes para organização de código.",
-    image: ["images/sistema_adm_loja.png", "images/sistema_adm_loja_db.png", "videos/sistema_adm_loja.mp4"],
+    image: [
+      "images/sistema_adm_loja.png",
+      "images/sistema_adm_loja_db.png",
+      "videos/sistema_adm_loja.mp4",
+    ],
     technologies: ["C#", "Windows Forms", "MySQL", "Visual Studio"],
     demoUrl: "",
-    githubUrl: "https://github.com/CaduDevTech/Sistema_de_Administracao_de_Loja",
+    githubUrl:
+      "https://github.com/CaduDevTech/Sistema_de_Administracao_de_Loja",
     category: "Full Stack",
     mensagem: [
       "Não está disponível...",
@@ -74,7 +79,8 @@ const projects = [
   {
     id: 4,
     title: "Portfolio Website",
-    description: "Portifolio completo com animações, efeitos de cabeçalho e design moderno. Seguindo os padrões de UI/UX moderno.",
+    description:
+      "Portifolio completo com animações, efeitos de cabeçalho e design moderno. Seguindo os padrões de UI/UX moderno.",
     longDescription:
       "Portfólio Pessoal em HTML, CSS, Tailwind, Animista e FinisherHeader. Este portfólio foi desenvolvido como uma vitrine pessoal para apresentar meus projetos e habilidades no desenvolvimento web. Utilizando tecnologias modernas, como HTML, CSS, Tailwind CSS, Animista para animações e FinisherHeader para efeitos de cabeçalho, o site foi projetado para ser visualmente atrativo e responsivo, oferecendo uma navegação fluida e agradável.<br><br><b>🎯 Funcionalidades principais</b><br>Design Responsivo: Adaptável a diferentes dispositivos e tamanhos de tela.<br>Animações Elegantes: Integração com Animista para transições e efeitos visuais interativos.<br>Estilização Moderna: Utilização do framework Tailwind CSS para um design limpo e fácil de manter.<br>Cabeçalho Personalizado: Efeitos de cabeçalho dinâmico com FinisherHeader, oferecendo uma experiência visual imersiva.<br><br><b>🧱 Tecnologias</b><br><b>💻 Frontend:</b> HTML, CSS, Tailwind CSS<br><b>✨ Animações:</b> Animista<br><b>🔧 Efeitos de Cabeçalho:</b> FinisherHeader<br><br><b>🧪 Status:</b> Portfólio em produção, com todas as funcionalidades principais implementadas, incluindo animações interativas e design responsivo. Em constante atualização para refletir novos projetos e melhorias.<br><br><b>🟢 Metodologia:</b> Desenvolvido com foco em design moderno e experiências de usuário dinâmicas. O projeto foi construído de forma ágil, priorizando a usabilidade e otimização para uma navegação sem falhas em dispositivos móveis e desktops.",
     image: "images/portifolio.png",
@@ -245,7 +251,8 @@ const blogPosts = [
   {
     id: 5,
     title: "Seminários  ISO 37001",
-    excerpt: "Seminario dado pela Produs sobre Antisuborno e Anticorrupção, com foco em ISO 37001.",
+    excerpt:
+      "Seminario dado pela Produs sobre Antisuborno e Anticorrupção, com foco em ISO 37001.",
     date: "2025-09-20",
     tags: ["Antisuborno", "Anticorrupção", "ISO 37001"],
     image: "images/seminario_anticorrupcao.jpg",
@@ -296,22 +303,20 @@ function initTheme() {
 
   function toggleTheme() {
     html.classList.toggle("dark");
-    localStorage.setItem("theme", html.classList.contains("dark") ? "dark" : "light");
-    
+    localStorage.setItem(
+      "theme",
+      html.classList.contains("dark") ? "dark" : "light"
+    );
+
     if (html.classList.contains("dark")) {
-    icon_sun.style.display = "block";
-    icon_moon.style.display = "none";
-    animateThemeSwitch();
-       createThemeInstances();
-  animateThemeSwitch();
-    
-  }else{
-    icon_sun.style.display = "none";
-    icon_moon.style.display = "block";
-    animateThemeSwitch();
-       createThemeInstances();
-  animateThemeSwitch();
-  }
+      icon_sun.style.display = "block";
+      icon_moon.style.display = "none";
+      animateThemeSwitch();
+    } else {
+      icon_sun.style.display = "none";
+      icon_moon.style.display = "block";
+      animateThemeSwitch();
+    }
   }
 
   themeToggle?.addEventListener("click", toggleTheme);
@@ -320,10 +325,7 @@ function initTheme() {
   if (localStorage.getItem("theme") === "dark") {
     html.classList.add("dark");
   }
-
-  
 }
-
 
 // Mobile menu functionality
 function initMobileMenu() {
@@ -529,14 +531,11 @@ closeIndisponivel.addEventListener("click", () => {
 });
 
 function openProjectModal(projectId) {
-
   const project = projects.find((p) => p.id === projectId);
   if (!project) return;
 
-
   const modal = document.getElementById("project-modal");
   const modalContent = document.getElementById("modal-content");
-  
 
   // Certifique-se de que project.images seja um array de URLs de imagem ou vídeo
   const images = Array.isArray(project.image) ? project.image : [project.image]; // Se 'project.images' não for um array, cria um com a única imagem
@@ -710,7 +709,6 @@ function closeProjectModal() {
   const modal = document.getElementById("project-modal");
   modal.classList.remove("active");
   document.body.style.overflow = "auto";
-  
 }
 
 // Generate technologies
@@ -839,8 +837,7 @@ document.addEventListener("DOMContentLoaded", () => {
   generateTechnologies();
   generateBlogPosts();
   animateThemeSwitch();
-   createThemeInstances();
-  animateThemeSwitch();
+  createThemeInstances();
 
   // Modal close functionality
   document
@@ -865,11 +862,115 @@ window.scrollToSection = scrollToSection;
 window.openProjectModal = openProjectModal;
 window.closeProjectModal = closeProjectModal;
 
-function teste(){
-   if(document.getElementById("finisher-canvas") == null){
-    console.log("finisher-canvas not found");
-    }else{
-    document.getElementById("finisher-canvas").remove();
+// Variáveis globais para armazenar os contêineres e instâncias
+  let darkFinisherInstance, lightFinisherInstance;
+  let darkFinisherContainer, lightFinisherContainer;
+
+  // Função para animar a troca de tema
+  function animateThemeSwitch() {
+    // Verifique qual tema está armazenado
+    const theme = localStorage.getItem("theme");
+
+    if (theme === "dark") {
+      // Exibe o contêiner do tema escuro e esconde o do tema claro
+      if (darkFinisherContainer) {
+        darkFinisherContainer.style.display = "block";  // Exibe o contêiner escuro
+      }
+      if (lightFinisherContainer) {
+        lightFinisherContainer.style.display = "none";  // Esconde o contêiner claro
+      }
+    } else {  // Tema claro
+      // Exibe o contêiner do tema claro e esconde o do tema escuro
+      if (lightFinisherContainer) {
+        lightFinisherContainer.style.display = "block";  // Exibe o contêiner claro
+      }
+      if (darkFinisherContainer) {
+        darkFinisherContainer.style.display = "none";  // Esconde o contêiner escuro
+      }
+
     }
-}
-   
+  }
+
+  // Função para criar as instâncias e contêineres
+  function createThemeInstances() {
+    // Verifique se as instâncias já foram criadas, se não, crie-as
+    if (!darkFinisherInstance) {
+      // Criação da instância para o tema claro
+      darkFinisherContainer = document.createElement("div");
+      darkFinisherContainer.classList.add("finisher-header-container");
+      darkFinisherContainer.style.width = "100%";
+      darkFinisherContainer.style.height = "100vh";
+      document.body.appendChild(darkFinisherContainer);  // Adiciona ao body
+
+      darkFinisherInstance = new FinisherHeader({
+        count: 12,
+        size: {
+          min: 400,
+          max: 700,
+          pulse: 2
+        },
+        speed: {
+          x: {
+            min: 0.6,
+            max: 1.2
+          },
+          y: {
+            min: 0.6,
+            max: 2.2
+          }
+        },
+        colors: {
+          background: "#3a72ed",
+          particles: ["#ffffff", "#3a72ed"]
+        },
+        blending: "overlay",
+        opacity: {
+          center: 0.4,
+          edge: 0
+        },
+        skew: 0,
+        shapes: ["c"]
+      });
+    }
+
+    if (!lightFinisherInstance) {
+      // Criação da instância para o tema escuro
+      lightFinisherContainer = document.createElement("div");
+      lightFinisherContainer.classList.add("finisher-header-container");
+      lightFinisherContainer.style.width = "100%";
+      lightFinisherContainer.style.height = "100vh";
+      document.body.appendChild(lightFinisherContainer);  // Adiciona ao body
+
+      lightFinisherInstance = new FinisherHeader({
+        className: "finisher-header-container", // Classe para o contêiner
+        count: 10,
+        size: {
+          min: 400,
+          max: 900,
+          pulse: 2
+        },
+        speed: {
+          x: {
+            min: 0,
+            max: 2
+          },
+          y: {
+            min: 2.2,
+            max: 2.2
+          }
+        },
+        colors: {
+          background: "#020817",
+          particles: ["#020817", "#3576df", "#26549e", "#020817"]
+        },
+        blending: "overlay",
+        opacity: {
+          center: 0.5,
+          edge: 0
+        },
+        skew: 0,
+        shapes: ["c"]
+      });
+    }
+  }
+    

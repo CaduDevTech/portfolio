@@ -297,8 +297,8 @@ lucide.createIcons();
 function initTheme() {
   const themeToggle = document.getElementById("theme-toggle");
   const themeToggleMobile = document.getElementById("theme-toggle-mobile");
-  const icon_sun = document.getElementById("sun-icon");
-  const icon_moon = document.getElementById("moon-icon");
+  const icon_sun = document.querySelector('[name="sun-icon"]');
+  const icon_moon = document.querySelector('[name="moon-icon"]');
   const html = document.documentElement;
 
   function toggleTheme() {
@@ -863,114 +863,113 @@ window.openProjectModal = openProjectModal;
 window.closeProjectModal = closeProjectModal;
 
 // Variáveis globais para armazenar os contêineres e instâncias
-  let darkFinisherInstance, lightFinisherInstance;
-  let darkFinisherContainer, lightFinisherContainer;
+let darkFinisherInstance, lightFinisherInstance;
+let darkFinisherContainer, lightFinisherContainer;
 
-  // Função para animar a troca de tema
-  function animateThemeSwitch() {
-    // Verifique qual tema está armazenado
-    const theme = localStorage.getItem("theme");
+// Função para animar a troca de tema
+function animateThemeSwitch() {
+  // Verifique qual tema está armazenado
+  const theme = localStorage.getItem("theme");
 
-    if (theme === "dark") {
-      // Exibe o contêiner do tema escuro e esconde o do tema claro
-      if (darkFinisherContainer) {
-        darkFinisherContainer.style.display = "block";  // Exibe o contêiner escuro
-      }
-      if (lightFinisherContainer) {
-        lightFinisherContainer.style.display = "none";  // Esconde o contêiner claro
-      }
-    } else {  // Tema claro
-      // Exibe o contêiner do tema claro e esconde o do tema escuro
-      if (lightFinisherContainer) {
-        lightFinisherContainer.style.display = "block";  // Exibe o contêiner claro
-      }
-      if (darkFinisherContainer) {
-        darkFinisherContainer.style.display = "none";  // Esconde o contêiner escuro
-      }
-
+  if (theme === "dark") {
+    // Exibe o contêiner do tema escuro e esconde o do tema claro
+    if (darkFinisherContainer) {
+      darkFinisherContainer.style.display = "block"; // Exibe o contêiner escuro
+    }
+    if (lightFinisherContainer) {
+      lightFinisherContainer.style.display = "none"; // Esconde o contêiner claro
+    }
+  } else {
+    // Tema claro
+    // Exibe o contêiner do tema claro e esconde o do tema escuro
+    if (lightFinisherContainer) {
+      lightFinisherContainer.style.display = "block"; // Exibe o contêiner claro
+    }
+    if (darkFinisherContainer) {
+      darkFinisherContainer.style.display = "none"; // Esconde o contêiner escuro
     }
   }
+}
 
-  // Função para criar as instâncias e contêineres
-  function createThemeInstances() {
-    // Verifique se as instâncias já foram criadas, se não, crie-as
-    if (!darkFinisherInstance) {
-      // Criação da instância para o tema claro
-      darkFinisherContainer = document.createElement("div");
-      darkFinisherContainer.classList.add("finisher-header-container");
-      darkFinisherContainer.style.width = "100%";
-      darkFinisherContainer.style.height = "100vh";
-      document.body.appendChild(darkFinisherContainer);  // Adiciona ao body
+// Função para criar as instâncias e contêineres
+function createThemeInstances() {
+  // Verifique se as instâncias já foram criadas, se não, crie-as
+  if (!darkFinisherInstance) {
+    // Criação da instância para o tema claro
+    darkFinisherContainer = document.createElement("div");
+    darkFinisherContainer.classList.add("finisher-header-container");
+    darkFinisherContainer.style.width = "100%";
+    darkFinisherContainer.style.height = "100vh";
+    document.body.appendChild(darkFinisherContainer); // Adiciona ao body
 
-      darkFinisherInstance = new FinisherHeader({
-        count: 12,
-        size: {
-          min: 400,
-          max: 700,
-          pulse: 2
+    darkFinisherInstance = new FinisherHeader({
+      count: 12,
+      size: {
+        min: 400,
+        max: 700,
+        pulse: 2,
+      },
+      speed: {
+        x: {
+          min: 0.6,
+          max: 1.2,
         },
-        speed: {
-          x: {
-            min: 0.6,
-            max: 1.2
-          },
-          y: {
-            min: 0.6,
-            max: 2.2
-          }
+        y: {
+          min: 0.6,
+          max: 2.2,
         },
-        colors: {
-          background: "#3a72ed",
-          particles: ["#ffffff", "#3a72ed"]
-        },
-        blending: "overlay",
-        opacity: {
-          center: 0.4,
-          edge: 0
-        },
-        skew: 0,
-        shapes: ["c"]
-      });
-    }
-
-    if (!lightFinisherInstance) {
-      // Criação da instância para o tema escuro
-      lightFinisherContainer = document.createElement("div");
-      lightFinisherContainer.classList.add("finisher-header-container");
-      lightFinisherContainer.style.width = "100%";
-      lightFinisherContainer.style.height = "100vh";
-      document.body.appendChild(lightFinisherContainer);  // Adiciona ao body
-
-      lightFinisherInstance = new FinisherHeader({
-        className: "finisher-header-container", // Classe para o contêiner
-        count: 10,
-        size: {
-          min: 400,
-          max: 900,
-          pulse: 2
-        },
-        speed: {
-          x: {
-            min: 0,
-            max: 2
-          },
-          y: {
-            min: 2.2,
-            max: 2.2
-          }
-        },
-        colors: {
-          background: "#020817",
-          particles: ["#020817", "#3576df", "#26549e", "#020817"]
-        },
-        blending: "overlay",
-        opacity: {
-          center: 0.5,
-          edge: 0
-        },
-        skew: 0,
-        shapes: ["c"]
-      });
-    }
+      },
+      colors: {
+        background: "#3a72ed",
+        particles: ["#ffffff", "#3a72ed"],
+      },
+      blending: "overlay",
+      opacity: {
+        center: 0.4,
+        edge: 0,
+      },
+      skew: 0,
+      shapes: ["c"],
+    });
   }
-    
+
+  if (!lightFinisherInstance) {
+    // Criação da instância para o tema escuro
+    lightFinisherContainer = document.createElement("div");
+    lightFinisherContainer.classList.add("finisher-header-container");
+    lightFinisherContainer.style.width = "100%";
+    lightFinisherContainer.style.height = "100vh";
+    document.body.appendChild(lightFinisherContainer); // Adiciona ao body
+
+    lightFinisherInstance = new FinisherHeader({
+      className: "finisher-header-container", // Classe para o contêiner
+      count: 10,
+      size: {
+        min: 400,
+        max: 900,
+        pulse: 2,
+      },
+      speed: {
+        x: {
+          min: 0,
+          max: 2,
+        },
+        y: {
+          min: 2.2,
+          max: 2.2,
+        },
+      },
+      colors: {
+        background: "#020817",
+        particles: ["#020817", "#3576df", "#26549e", "#020817"],
+      },
+      blending: "overlay",
+      opacity: {
+        center: 0.5,
+        edge: 0,
+      },
+      skew: 0,
+      shapes: ["c"],
+    });
+  }
+}

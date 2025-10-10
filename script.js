@@ -119,32 +119,32 @@ const technologies = [
       {
         name: "Angular",
         level: "Intermediário",
-        icon: '<img src="icones SVG/angular.svg" class="h-6 w-6"/>',
+        icon: '<img loading="lazy" src="icones SVG/angular.svg" class="h-6 w-6"/>',
       },
       {
         name: "Ionic",
         level: "Avançado",
-        icon: '<img src="icones SVG/ionic.svg" class="h-6 w-6"/>',
+        icon: '<img loading="lazy" src="icones SVG/ionic.svg" class="h-6 w-6"/>',
       },
       {
         name: "TypeScript",
         level: "Intermediário",
-        icon: '<img src="icones SVG/typescript.svg" class="h-6 w-6"/>',
+        icon: '<img loading="lazy" src="icones SVG/typescript.svg" class="h-6 w-6"/>',
       },
       {
         name: "Tailwind CSS",
         level: "Intermediário",
-        icon: '<img src="icones SVG/tailwind.svg" class="h-6 w-6"/>',
+        icon: '<img loading="lazy" src="icones SVG/tailwind.svg" class="h-6 w-6"/>',
       },
       {
         name: "bootstrap",
         level: "Avançado",
-        icon: '<img src="icones SVG/bootstrap.svg" class="h-6 w-6"/>',
+        icon: '<img loading="lazy" src="icones SVG/bootstrap.svg" class="h-6 w-6"/>',
       },
       {
         name: "Figma",
         level: "Básico",
-        icon: '<img src="icones SVG/figma.svg" class="h-6 w-6"/>',
+        icon: '<img loading="lazy" src="icones SVG/figma.svg" class="h-6 w-6"/>',
       },
     ],
   },
@@ -155,27 +155,27 @@ const technologies = [
       {
         name: "Laravel",
         level: "Intermediário",
-        icon: '<img src="icones SVG/laravel.svg" class="h-6 w-6"/>',
+        icon: '<img loading="lazy" src="icones SVG/laravel.svg" class="h-6 w-6"/>',
       },
       {
         name: "C#",
         level: "Básico",
-        icon: '<img src="icones SVG/csharp.svg" class="h-6 w-6"/>',
+        icon: '<img loading="lazy" src="icones SVG/csharp.svg" class="h-6 w-6"/>',
       },
       {
         name: "MySQL",
         level: "Intermediário",
-        icon: '<img src="icones SVG/mysql.svg" class="h-6 w-6"/>',
+        icon: '<img loading="lazy" src="icones SVG/mysql.svg" class="h-6 w-6"/>',
       },
       {
         name: "Oracle Database",
         level: "Intermediário",
-        icon: '<img src="icones SVG/sqlServer.svg" class="h-6 w-6"/>',
+        icon: '<img loading="lazy" src="icones SVG/sqlServer.svg" class="h-6 w-6"/>',
       },
       {
         name: "PHP",
         level: "Intermediário",
-        icon: '<img src="icones SVG/php.svg" class="h-6 w-6"/>',
+        icon: '<img loading="lazy" src="icones SVG/php.svg" class="h-6 w-6"/>',
       },
     ],
   },
@@ -186,22 +186,22 @@ const technologies = [
       {
         name: "Linux",
         level: "Básico",
-        icon: '<img src="icones SVG/linux.svg" class="h-6 w-6"/>',
+        icon: '<img loading="lazy" src="icones SVG/linux.svg" class="h-6 w-6"/>',
       },
       {
         name: "AWS",
         level: "Básico",
-        icon: '<img src="icones SVG/aws.svg" class="h-6 w-6"/>',
+        icon: '<img loading="lazy" src="icones SVG/aws.svg" class="h-6 w-6"/>',
       },
       {
         name: "Git",
         level: "Avançado",
-        icon: '<img src="icones SVG/git.svg" class="h-6 w-6"/>',
+        icon: '<img loading="lazy" src="icones SVG/git.svg" class="h-6 w-6"/>',
       },
       {
         name: "Apache Server",
         level: "Básico",
-        icon: '<img src="icones SVG/apache.svg" class="h-6 w-6"/>',
+        icon: '<img loading="lazy" src="icones SVG/apache.svg" class="h-6 w-6"/>',
       },
     ],
   },
@@ -414,7 +414,7 @@ function generateProjects() {
                       project.category
                     }" style="animation-delay: ${index * 100}ms;">
                         <div class="relative overflow-hidden rounded-t-lg group">
-                            <img src="${
+                            <img loading="lazy" src="${
                               Array.isArray(project.image)
                                 ? project.image[0]
                                 : project.image
@@ -549,13 +549,13 @@ function openProjectModal(projectId) {
         ${
           isVideo
             ? `
-          <video disablepictureinpicture canplay class="w-full h-full object-cover rounded-lg mb-6" controls>
+          <video loading="lazy" disablepictureinpicture canplay class="w-full h-full object-cover rounded-lg mb-6" controls>
             <source src="${images[i]}" type="video/mp4">
             Seu navegador não suporta a tag de vídeo.
           </video>
         `
             : `
-          <img src="${images[i]}" alt="Image ${
+          <img loading="lazy" src="${images[i]}" alt="Image ${
                 i + 1
               }" class="w-full h-full object-cover rounded-lg mb-6">
         `
@@ -785,7 +785,7 @@ function generateBlogPosts() {
                   index * 100
                 }ms;">
                     <div class="relative overflow-hidden rounded-t-lg group">
-                        <img src="${
+                        <img loading="lazy" src="${
                           post.image || "/placeholder.svg?height=200&width=400"
                         }" alt="${
         post.title

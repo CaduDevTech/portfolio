@@ -1,4 +1,4 @@
-export type ProjectCategory = 'all' | 'Full Stack' | 'Frontend' | 'Backend';
+export type ProjectCategory = 'all' | 'Full Stack' | 'Frontend' | 'Backend' | 'Cloud';
 
 export type SkillLevel = 'Intermediário' | 'Avançado' | 'Básico';
 

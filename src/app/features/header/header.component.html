@@ -1,0 +1,125 @@
+﻿<header
+  id="header"
+  class="fixed top-0 w-full z-50 transition-all duration-300"
+  [class.bg-background\/80]="isScrolled"
+  [class.backdrop-blur-md]="isScrolled"
+  [class.border-b]="isScrolled"
+  [class.border-border]="isScrolled"
+>
+  <nav class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <div class="text-xl font-bold text-foreground">Carlos Eduardo</div>
+
+      <div class="hidden md:flex items-center space-x-8">
+        <button
+          (click)="onNavigate('home')"
+          class="text-foreground hover:text-accent transition-colors"
+        >
+          Home
+        </button>
+        <button
+          (click)="onNavigate('projects')"
+          class="text-foreground hover:text-accent transition-colors"
+        >
+          Projetos
+        </button>
+        <button
+          (click)="onNavigate('technologies')"
+          class="text-foreground hover:text-accent transition-colors"
+        >
+          Tecnologias
+        </button>
+        <button
+          (click)="onNavigate('blog')"
+          class="text-foreground hover:text-accent transition-colors"
+        >
+          Sobre
+        </button>
+        <button
+          class="relative btn-ghost p-2 rounded-md"
+          (click)="toggleTheme.emit()"
+          aria-label="Alternar tema"
+        >
+          <lucide-angular
+            [img]="sunIcon"
+            class="h-5 w-5"
+            [class.hidden]="!isDark"
+          />
+          <lucide-angular
+            [img]="moonIcon"
+            class="h-5 w-5"
+            [class.hidden]="isDark"
+          />
+        </button>
+      </div>
+
+      <div class="md:hidden flex items-center space-x-2">
+        <button
+          class="btn-ghost p-2 rounded-md"
+          (click)="toggleTheme.emit()"
+          aria-label="Alternar tema"
+        >
+          <lucide-angular
+            [img]="sunIcon"
+            class="h-5 w-5"
+            [class.hidden]="!isDark"
+          />
+          <lucide-angular
+            [img]="moonIcon"
+            class="h-5 w-5"
+            [class.hidden]="isDark"
+          />
+        </button>
+        <button
+          class="btn-ghost p-2 rounded-md"
+          (click)="toggleMobileMenu.emit()"
+          aria-label="Abrir menu"
+        >
+          <lucide-angular
+            [img]="menuIcon"
+            class="h-5 w-5"
+            [class.hidden]="isMobileMenuOpen"
+          />
+          <lucide-angular
+            [img]="closeIcon"
+            class="h-5 w-5"
+            [class.hidden]="!isMobileMenuOpen"
+          />
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="md:hidden mt-4 py-4 border-t border-border"
+      [class.hidden]="!isMobileMenuOpen"
+    >
+      <div class="flex flex-col space-y-4">
+        <button
+          (click)="onNavigate('home')"
+          class="text-left text-foreground hover:text-accent transition-colors"
+        >
+          Home
+        </button>
+        <button
+          (click)="onNavigate('projects')"
+          class="text-left text-foreground hover:text-accent transition-colors"
+        >
+          Projetos
+        </button>
+        <button
+          (click)="onNavigate('technologies')"
+          class="text-left text-foreground hover:text-accent transition-colors"
+        >
+          Tecnologias
+        </button>
+        <button
+          (click)="onNavigate('blog')"
+          class="text-left text-foreground hover:text-accent transition-colors"
+        >
+          Sobre
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
+

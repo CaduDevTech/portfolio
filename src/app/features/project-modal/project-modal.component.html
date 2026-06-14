@@ -1,0 +1,127 @@
+﻿<div
+  id="project-modal"
+  class="z-10 modal"
+  [class.active]="!!project"
+  (click)="onOverlayClick($event)"
+>
+  <div
+    *ngIf="project"
+    class="bg-card rounded-xl max-w-4xl mx-4 p-8 relative max-h-[80vh] overflow-y-auto"
+  >
+    <button
+      id="modal-close"
+      class="absolute top-4 right-4 text-muted-foreground hover:text-foreground"
+      (click)="close.emit()"
+      aria-label="Fechar modal"
+    >
+      <lucide-angular [img]="closeIcon" class="w-6 h-6" />
+    </button>
+
+    <h2 class="text-2xl font-bold text-foreground mb-4">{{ project.title }}</h2>
+    <p class="text-muted-foreground text-base mb-6" [innerHTML]="project.longDescriptionHtml | safeHtml"></p>
+
+    <div class="relative w-full mb-6" *ngIf="project.media.length">
+      <div class="flex overflow-hidden">
+        <div class="w-full">
+          <ng-container *ngIf="!isVideo(currentMedia); else videoMedia">
+            <img
+              loading="lazy"
+              [src]="currentMedia"
+              [alt]="project.title"
+              class="w-full h-full object-cover rounded-lg"
+            />
+          </ng-container>
+          <ng-template #videoMedia>
+            <video
+              loading="lazy"
+              disablepictureinpicture
+              class="w-full h-full object-cover rounded-lg"
+              controls
+            >
+              <source [src]="currentMedia" type="video/mp4" />
+              Seu navegador não suporta a tag de vídeo.
+            </video>
+          </ng-template>
+        </div>
+      </div>
+
+      <button
+        *ngIf="project.media.length > 1"
+        type="button"
+        class="absolute top-1/2 left-0 z-30 flex items-center justify-center w-10 h-10 -translate-y-1/2 cursor-pointer group focus:outline-none"
+        (click)="previousMedia()"
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60"
+        >
+          <lucide-angular [img]="previousIcon" class="w-4 h-4 text-white" />
+        </span>
+      </button>
+
+      <button
+        *ngIf="project.media.length > 1"
+        type="button"
+        class="absolute top-1/2 right-0 z-30 flex items-center justify-center w-10 h-10 -translate-y-1/2 cursor-pointer group focus:outline-none"
+        (click)="nextMedia()"
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60"
+        >
+          <lucide-angular [img]="nextIcon" class="w-4 h-4 text-white" />
+        </span>
+      </button>
+    </div>
+
+    <div class="space-y-4">
+      <div>
+        <h4 class="font-semibold mb-2">Tecnologias Utilizadas:</h4>
+        <div class="flex flex-wrap gap-2">
+          <span *ngFor="let tech of project.technologies" class="badge badge-secondary">
+            {{ tech }}
+          </span>
+        </div>
+      </div>
+
+      <div class="flex gap-4 pt-4">
+        <a
+          *ngIf="project.demoUrl"
+          [href]="project.demoUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary px-6 py-3 rounded-md"
+        >
+          <lucide-angular [img]="externalLinkIcon" class="mr-2 h-4 w-4" />
+          Ver Demo
+        </a>
+        <button
+          *ngIf="!project.demoUrl"
+          class="btn-primary px-6 py-3 rounded-md"
+          (click)="emitUnavailable()"
+        >
+          <lucide-angular [img]="externalLinkIcon" class="mr-2 h-4 w-4" />
+          Ver Demo
+        </button>
+
+        <a
+          *ngIf="project.githubUrl"
+          [href]="project.githubUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-outline px-6 py-3 rounded-md"
+        >
+          <lucide-angular [img]="githubIcon" class="mr-2 h-4 w-4" />
+          Visualizar Código
+        </a>
+        <button
+          *ngIf="!project.githubUrl"
+          class="btn-outline px-6 py-3 rounded-md"
+          (click)="emitUnavailable()"
+        >
+          <lucide-angular [img]="githubIcon" class="mr-2 h-4 w-4" />
+          Visualizar Código
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+

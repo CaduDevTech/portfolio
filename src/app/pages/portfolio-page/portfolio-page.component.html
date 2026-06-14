@@ -1,0 +1,44 @@
+﻿<div class="header finisher-header" style="width: 100%; min-height: 100vh">
+  <app-header
+    [isDark]="isDark()"
+    [isMobileMenuOpen]="isMobileMenuOpen()"
+    [isScrolled]="isHeaderScrolled()"
+    (navigate)="navigateToSection($event)"
+    (toggleTheme)="toggleTheme()"
+    (toggleMobileMenu)="toggleMobileMenu()"
+  />
+
+  <app-hero
+    [heroTitle]="heroTitle()"
+    (navigateToProjects)="navigateToSection('projects')"
+  />
+
+  <app-projects
+    [projects]="filteredProjects()"
+    [filters]="filters"
+    [activeFilter]="activeFilter()"
+    (filterChange)="onFilterChange($event)"
+    (openProject)="openProjectModal($event)"
+    (openUnavailable)="openUnavailableModal($event)"
+  />
+
+  <app-technologies
+    [technologies]="technologies"
+    [additionalSkills]="additionalSkills"
+  />
+
+  <app-blog [posts]="blogPosts" />
+
+  <app-footer (navigate)="navigateToSection($event)" />
+
+  <app-project-modal
+    [project]="selectedProject()"
+    (close)="closeProjectModal()"
+    (openUnavailable)="openUnavailableModal($event)"
+  />
+</div>
+
+<app-unavailable-modal
+  [message]="unavailableMessage()"
+  (close)="closeUnavailableModal()"
+/>

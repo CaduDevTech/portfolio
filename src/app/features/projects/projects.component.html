@@ -1,0 +1,129 @@
+﻿<section id="projects" class="py-20 bg-muted/30">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16 fade-in" appRevealOnScroll>
+      <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        Projetos Relevantes
+      </h2>
+      <p class="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
+        Uma seleção dos meus projetos mais impactantes, demonstrando minhas
+        habilidades em desenvolvimento web full stack.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-2 mb-12 fade-in" appRevealOnScroll>
+      <button
+        *ngFor="let filter of filters"
+        (click)="onFilterChange(filter)"
+        class="px-6 py-2 rounded-full mb-2"
+        [class.btn-primary]="activeFilter === filter"
+        [class.btn-outline]="activeFilter !== filter"
+      >
+        {{ filter === 'all' ? 'Todos' : filter }}
+      </button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+      <div
+        *ngFor="let project of projects; let i = index; trackBy: trackByProjectId"
+        class="project-card card-hover bg-card rounded-xl overflow-hidden shadow-lg fade-in"
+        appRevealOnScroll
+        [style.animation-delay.ms]="i * 100"
+      >
+        <div class="relative overflow-hidden rounded-t-lg group">
+          <ng-container *ngIf="!isVideo(getPreviewMedia(project)); else videoPreview">
+            <img
+              loading="lazy"
+              [src]="getPreviewMedia(project)"
+              [alt]="project.title"
+              class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          </ng-container>
+          <ng-template #videoPreview>
+            <video
+              [src]="getPreviewMedia(project)"
+              class="w-full h-48 object-cover"
+              muted
+            ></video>
+          </ng-template>
+
+          <div
+            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+          >
+            <button
+              (click)="openProject.emit(project)"
+              class="btn-primary px-4 py-2 rounded-md mr-2"
+            >
+              <lucide-angular [img]="eyeIcon" class="mr-2 h-4 w-4" />
+              Ver Detalhes
+            </button>
+          </div>
+        </div>
+
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-lg font-semibold text-foreground">{{ project.title }}</h3>
+            <span class="badge badge-secondary">{{ project.category }}</span>
+          </div>
+
+          <p class="text-muted-foreground mb-4">{{ project.description }}</p>
+
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span
+              *ngFor="let tech of project.technologies | slice:0:3"
+              class="badge badge-outline text-xs"
+            >
+              {{ tech }}
+            </span>
+            <span
+              *ngIf="project.technologies.length > 3"
+              class="badge badge-outline text-xs"
+            >
+              + {{ project.technologies.length - 3 }}
+            </span>
+          </div>
+
+          <div class="flex gap-2">
+            <a
+              *ngIf="project.demoUrl"
+              [href]="project.demoUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary px-6 py-3 rounded-md"
+            >
+              <lucide-angular [img]="externalLinkIcon" class="mr-2 h-4 w-4" />
+              Ver Demo
+            </a>
+            <button
+              *ngIf="!project.demoUrl"
+              class="btn-primary px-6 py-3 rounded-md"
+              (click)="emitUnavailable(project)"
+            >
+              <lucide-angular [img]="externalLinkIcon" class="mr-2 h-4 w-4" />
+              Ver Demo
+            </button>
+
+            <a
+              *ngIf="project.githubUrl"
+              [href]="project.githubUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-outline px-6 py-3 rounded-md"
+            >
+              <lucide-angular [img]="githubIcon" class="mr-2 h-4 w-4" />
+              Visualizar Código
+            </a>
+            <button
+              *ngIf="!project.githubUrl"
+              class="btn-outline px-6 py-3 rounded-md"
+              (click)="emitUnavailable(project)"
+            >
+              <lucide-angular [img]="githubIcon" class="mr-2 h-4 w-4" />
+              Visualizar Código
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

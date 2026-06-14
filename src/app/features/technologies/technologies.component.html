@@ -1,0 +1,61 @@
+﻿<section id="technologies" class="py-20">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16 fade-in" appRevealOnScroll>
+      <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        Tecnologias & Skills
+      </h2>
+      <p class="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
+        As principais tecnologias e ferramentas que utilizo para construir
+        soluções web modernas e eficientes.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in" appRevealOnScroll>
+      <div
+        *ngFor="let category of technologies; let categoryIndex = index"
+        class="card-hover bg-card rounded-xl shadow-lg p-6 fade-in visible"
+        [style.animation-delay.ms]="categoryIndex * 200"
+      >
+        <h3 class="text-xl font-semibold text-foreground mb-2">{{ category.category }}</h3>
+        <p class="text-muted-foreground mb-6">{{ category.description }}</p>
+
+        <div class="space-y-4">
+          <div
+            *ngFor="let skill of category.skills; let skillIndex = index"
+            class="flex items-center justify-between p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors cards-skill"
+            [style.animation-delay.ms]="categoryIndex * 200 + skillIndex * 50"
+          >
+            <div class="flex items-center space-x-3">
+              <span class="text-2xl">
+                <img
+                  loading="lazy"
+                  [src]="skill.iconAsset"
+                  class="h-6 w-6"
+                  [alt]="skill.name"
+                />
+              </span>
+              <span class="font-medium text-foreground">{{ skill.name }}</span>
+            </div>
+
+            <span class="badge" [ngClass]="getLevelColor(skill.level)">
+              {{ skill.level }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-16 text-center fade-in" appRevealOnScroll>
+      <h3 class="text-2xl font-bold text-foreground mb-8">Outras Habilidades</h3>
+      <div class="flex flex-nowrap justify-center gap-3" id="additional-skills">
+        <div class="logos">
+          <ul>
+            <li *ngFor="let skill of additionalSkills" class="skill-item">
+              <span class="badge badge-outline text-sm py-2 px-4">{{ skill }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

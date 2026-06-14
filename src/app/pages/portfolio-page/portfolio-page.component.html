@@ -13,6 +13,7 @@
   <app-hero
     [heroTitle]="heroTitle()"
     (navigateToProjects)="navigateToSection('projects')"
+    (titleTypingComplete)="onHeroTitleTypingComplete()"
   />
 
   <app-projects

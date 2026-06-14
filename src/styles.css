@@ -253,6 +253,8 @@ body {
 }
 
 .div-write {
+  --typing-characters: 22;
+  --typing-width: calc(var(--typing-characters) * 1ch);
   display: block;
   white-space: nowrap;
   margin-top: 10%;
@@ -260,8 +262,8 @@ body {
   font-weight: 700;
   font-size: 4.5rem;
   overflow: hidden;
-  animation: typing 7s steps(22, end) infinite, mark 0.5s step-end infinite;
-  width: 22ch;
+  animation: typing 7s steps(var(--typing-characters), end) infinite, mark 0.5s step-end infinite;
+  width: var(--typing-width);
   max-width: fit-content;
   margin-left: auto;
   margin-right: auto;
@@ -380,11 +382,11 @@ canvas {
   }
 
   20% {
-    width: 22ch;
+    width: var(--typing-width);
   }
 
   70% {
-    width: 22ch;
+    width: var(--typing-width);
   }
 
   80% {

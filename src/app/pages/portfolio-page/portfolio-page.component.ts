@@ -70,7 +70,8 @@ export class PortfolioPageComponent implements OnInit, AfterViewInit, OnDestroy 
     return this.projects.filter((project) => project.category === currentFilter);
   });
 
-  private heroIntervalId?: ReturnType<typeof setInterval>;
+  private readonly heroTitles = ['Full Stack Developer', 'Carlos Santos'];
+  private heroTitleIndex = 0;
 
   constructor(
     private readonly themeService: ThemeService,
@@ -83,7 +84,7 @@ export class PortfolioPageComponent implements OnInit, AfterViewInit, OnDestroy 
 
   ngOnInit(): void {
     this.themeService.initTheme();
-    this.startHeroTitleRotation();
+    this.heroTitle.set(this.heroTitles[this.heroTitleIndex]);
   }
 
   ngAfterViewInit(): void {
@@ -91,10 +92,6 @@ export class PortfolioPageComponent implements OnInit, AfterViewInit, OnDestroy 
   }
 
   ngOnDestroy(): void {
-    if (this.heroIntervalId) {
-      clearInterval(this.heroIntervalId);
-    }
-
     this.lockBodyScroll(false);
   }
 
@@ -157,16 +154,9 @@ export class PortfolioPageComponent implements OnInit, AfterViewInit, OnDestroy 
     this.syncBodyScroll();
   }
 
-  private startHeroTitleRotation(): void {
-    const titles = ['Full Stack Developer', 'Carlos Santos'];
-    let index = 0;
-
-    this.heroTitle.set(titles[index]);
-
-    this.heroIntervalId = setInterval(() => {
-      index = (index + 1) % titles.length;
-      this.heroTitle.set(titles[index]);
-    }, 3500);
+  onHeroTitleTypingComplete(): void {
+    this.heroTitleIndex = (this.heroTitleIndex + 1) % this.heroTitles.length;
+    this.heroTitle.set(this.heroTitles[this.heroTitleIndex]);
   }
 
   private syncBodyScroll(): void {

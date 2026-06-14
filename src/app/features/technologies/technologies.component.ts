@@ -13,6 +13,8 @@ export class TechnologiesComponent {
   @Input({ required: true }) technologies: TechnologyGroup[] = [];
   @Input({ required: true }) additionalSkills: string[] = [];
 
+  readonly marqueeCopies = Array.from({ length: 6 }, (_, index) => index);
+
   getLevelColor(level: string): string {
     switch (level) {
       case 'Expert':
@@ -26,5 +28,9 @@ export class TechnologiesComponent {
       default:
         return 'bg-muted text-foreground';
     }
+  }
+
+  trackByMarqueeCopy(index: number): number {
+    return index;
   }
 }

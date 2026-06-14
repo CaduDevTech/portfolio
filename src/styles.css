@@ -343,19 +343,32 @@ li {
   width: 100%;
 }
 
+.logos {
+  width: 100%;
+}
+
 canvas {
   will-change: transform;
+}
+
+.logos-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: slide 25s linear infinite;
+}
+
+.logos-track:hover {
+  animation-play-state: paused;
 }
 
 .logos ul {
   display: flex;
   gap: 1rem;
+  flex: 0 0 auto;
+  min-width: max-content;
+  padding-right: 1rem;
   width: fit-content;
-  animation: slide 25s linear infinite;
-}
-
-.logos ul:hover {
-  animation-play-state: paused;
 }
 
 .skill-item {
@@ -367,16 +380,12 @@ canvas {
 }
 
 @keyframes slide {
-  0% {
+  from {
     transform: translateX(0);
   }
 
-  50% {
-    transform: translateX(-26%);
-  }
-
-  100% {
-    transform: translateX(0%);
+  to {
+    transform: translateX(-16.6666667%);
   }
 }
 

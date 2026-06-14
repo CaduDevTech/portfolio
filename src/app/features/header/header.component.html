@@ -12,30 +12,35 @@
 
       <div class="hidden md:flex items-center space-x-8">
         <button
+          type="button"
           (click)="onNavigate('home')"
           class="text-foreground hover:text-accent transition-colors"
         >
           Home
         </button>
         <button
+          type="button"
           (click)="onNavigate('projects')"
           class="text-foreground hover:text-accent transition-colors"
         >
           Projetos
         </button>
         <button
+          type="button"
           (click)="onNavigate('technologies')"
           class="text-foreground hover:text-accent transition-colors"
         >
           Tecnologias
         </button>
         <button
+          type="button"
           (click)="onNavigate('blog')"
           class="text-foreground hover:text-accent transition-colors"
         >
           Sobre
         </button>
         <button
+          type="button"
           class="relative btn-ghost p-2 rounded-md"
           (click)="toggleTheme.emit()"
           aria-label="Alternar tema"
@@ -55,6 +60,7 @@
 
       <div class="md:hidden flex items-center space-x-2">
         <button
+          type="button"
           class="btn-ghost p-2 rounded-md"
           (click)="toggleTheme.emit()"
           aria-label="Alternar tema"
@@ -71,6 +77,7 @@
           />
         </button>
         <button
+          type="button"
           class="btn-ghost p-2 rounded-md"
           (click)="toggleMobileMenu.emit()"
           aria-label="Abrir menu"
@@ -95,24 +102,28 @@
     >
       <div class="flex flex-col space-y-4">
         <button
+          type="button"
           (click)="onNavigate('home')"
           class="text-left text-foreground hover:text-accent transition-colors"
         >
           Home
         </button>
         <button
+          type="button"
           (click)="onNavigate('projects')"
           class="text-left text-foreground hover:text-accent transition-colors"
         >
           Projetos
         </button>
         <button
+          type="button"
           (click)="onNavigate('technologies')"
           class="text-left text-foreground hover:text-accent transition-colors"
         >
           Tecnologias
         </button>
         <button
+          type="button"
           (click)="onNavigate('blog')"
           class="text-left text-foreground hover:text-accent transition-colors"
         >

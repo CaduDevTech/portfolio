@@ -115,7 +115,18 @@ export class PortfolioPageComponent implements OnInit, AfterViewInit, OnDestroy 
   navigateToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
 
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (!element) {
+      return;
+    }
+
+    const headerElement = document.getElementById('header');
+    const headerHeight = headerElement?.offsetHeight ?? 0;
+    const top = element.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
+
+    window.scrollTo({
+      top: Math.max(top, 0),
+      behavior: 'smooth',
+    });
 
     if (this.isMobileMenuOpen()) {
       this.isMobileMenuOpen.set(false);

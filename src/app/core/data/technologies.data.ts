@@ -105,5 +105,8 @@ export const ADDITIONAL_SKILLS: string[] = [
   "Burb Suite e Postman",
   "RAG (Retrieval-Augmented Generation)",
   "Clean Code",
-  "Documentação Técnica"
+  "Documentação Técnica",
+  "N8N",
+  "AWS",
+  
 ];

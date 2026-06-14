@@ -111,8 +111,8 @@ export class FinisherBackgroundService {
         },
       },
       colors: {
-        background: '#3a72ed',
-        particles: ['#ffffff', '#3a72ed'],
+        background: '#ffffff',
+        particles: ['#3a72ed', '#ffffff', '#3a72ed'],
       },
       blending: 'overlay',
       opacity: {

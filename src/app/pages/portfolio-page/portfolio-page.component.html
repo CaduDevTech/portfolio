@@ -1,4 +1,6 @@
-﻿<div class="header finisher-header" style="width: 100%; min-height: 100vh">
+<div class="portfolio-background finisher-header" aria-hidden="true"></div>
+
+<div class="portfolio-page-content">
   <app-header
     [isDark]="isDark()"
     [isMobileMenuOpen]="isMobileMenuOpen()"
@@ -36,9 +38,9 @@
     (close)="closeProjectModal()"
     (openUnavailable)="openUnavailableModal($event)"
   />
-</div>
 
-<app-unavailable-modal
-  [message]="unavailableMessage()"
-  (close)="closeUnavailableModal()"
-/>
+  <app-unavailable-modal
+    [message]="unavailableMessage()"
+    (close)="closeUnavailableModal()"
+  />
+</div>

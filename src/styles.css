@@ -267,23 +267,17 @@ body {
   margin-right: auto;
 }
 
-.header.finisher-header {
-  position: relative;
+.portfolio-background.finisher-header {
+  position: fixed;
+  inset: 0;
   width: 100%;
-  min-height: 100vh;
-  isolation: isolate;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
 }
 
-.header.finisher-header > * {
-  position: relative;
-  z-index: 2;
-}
-
-.header.finisher-header > app-header {
-  z-index: 60;
-}
-
-.header.finisher-header canvas {
+.portfolio-background.finisher-header canvas {
   position: absolute !important;
   inset: 0;
   width: 100% !important;
@@ -291,6 +285,12 @@ body {
   display: block;
   z-index: 1;
   pointer-events: none;
+}
+
+.portfolio-page-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
 }
 
 li {

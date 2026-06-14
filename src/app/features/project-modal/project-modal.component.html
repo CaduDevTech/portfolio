@@ -1,12 +1,14 @@
 ﻿<div
   id="project-modal"
-  class="z-10 modal"
+  class="modal"
   [class.active]="!!project"
+  role="dialog"
+  aria-modal="true"
   (click)="onOverlayClick($event)"
 >
   <div
     *ngIf="project"
-    class="bg-card rounded-xl max-w-4xl mx-4 p-8 relative max-h-[80vh] overflow-y-auto"
+    class="bg-card rounded-xl w-full max-w-4xl mx-4 p-8 relative max-h-[calc(100vh-2rem)] overflow-y-auto"
   >
     <button
       id="modal-close"

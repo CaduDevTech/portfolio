@@ -76,6 +76,8 @@ export class PortfolioPageComponent implements OnInit, AfterViewInit, OnDestroy 
   private readonly titlePauseMs = 1200;
   private heroTitleTimeoutId?: ReturnType<typeof setTimeout>;
   private heroTitleIndex = 0;
+  private bodyScrollLocked = false;
+  private bodyScrollY = 0;
 
   constructor(
     private readonly themeService: ThemeService,
@@ -168,7 +170,44 @@ export class PortfolioPageComponent implements OnInit, AfterViewInit, OnDestroy 
   }
 
   private lockBodyScroll(lock: boolean): void {
-    document.body.style.overflow = lock ? 'hidden' : 'auto';
+    if (typeof document === 'undefined' || typeof window === 'undefined') {
+      return;
+    }
+
+    if (lock) {
+      if (this.bodyScrollLocked) {
+        return;
+      }
+
+      this.bodyScrollLocked = true;
+      this.bodyScrollY = window.scrollY;
+
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.setProperty('--scrollbar-compensation', `${scrollbarWidth}px`);
+      document.body.style.top = `-${this.bodyScrollY}px`;
+      document.body.classList.add('modal-open');
+      return;
+    }
+
+    if (!this.bodyScrollLocked) {
+      return;
+    }
+
+    const scrollY = this.bodyScrollY;
+    const htmlElement = document.documentElement;
+    const previousScrollBehavior = htmlElement.style.scrollBehavior;
+
+    this.bodyScrollLocked = false;
+    htmlElement.style.scrollBehavior = 'auto';
+    document.body.classList.remove('modal-open');
+    document.body.style.removeProperty('top');
+    document.body.style.removeProperty('--scrollbar-compensation');
+    window.scrollTo(0, scrollY);
+    this.bodyScrollY = 0;
+
+    requestAnimationFrame(() => {
+      htmlElement.style.scrollBehavior = previousScrollBehavior;
+    });
   }
 
   private typeHeroTitle(): void {

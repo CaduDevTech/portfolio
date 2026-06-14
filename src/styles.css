@@ -253,20 +253,39 @@ body {
 }
 
 .div-write {
-  --typing-characters: 22;
-  --typing-width: calc(var(--typing-characters) * 1ch);
   display: block;
-  white-space: nowrap;
-  margin-top: 10%;
-  border-right: 7px solid #3576df;
+  width: fit-content;
+  max-width: min(100%, 22ch);
+  margin: 10% auto 0;
   font-weight: 700;
-  font-size: 4.5rem;
-  overflow: hidden;
-  animation: typing 7s steps(var(--typing-characters), end) infinite, mark 0.5s step-end infinite;
-  width: var(--typing-width);
-  max-width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: clamp(3.25rem, 11vw, 4.5rem);
+  line-height: 1.08;
+  letter-spacing: 0;
+  overflow: visible;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+  white-space: normal;
+}
+
+@media (max-width: 640px) {
+  .div-write {
+    max-width: min(100%, 10.5ch);
+  }
+}
+
+@media (max-width: 480px) {
+  .div-write {
+    max-width: min(100%, 9.5ch);
+  }
+}
+
+.typing-cursor {
+  display: inline-block;
+  height: 0.9em;
+  margin-left: 0.08em;
+  border-right: 0.095em solid #3576df;
+  transform: translateY(0.08em);
+  animation: mark 0.5s step-end infinite;
 }
 
 .portfolio-background.finisher-header {
@@ -373,27 +392,5 @@ canvas {
 
   90% {
     transform: translateX(-6px);
-  }
-}
-
-@keyframes typing {
-  0% {
-    width: 0;
-  }
-
-  20% {
-    width: var(--typing-width);
-  }
-
-  70% {
-    width: var(--typing-width);
-  }
-
-  80% {
-    width: 0;
-  }
-
-  100% {
-    width: 0;
   }
 }

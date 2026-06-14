@@ -58,7 +58,7 @@ export class PortfolioPageComponent implements OnInit, AfterViewInit, OnDestroy 
   readonly unavailableMessage = signal<UnavailableMessage | null>(null);
   readonly isMobileMenuOpen = signal(false);
   readonly isHeaderScrolled = signal(false);
-  readonly heroTitle = signal('Full Stack Developer');
+  readonly heroTitle = signal('');
 
   readonly filteredProjects = computed(() => {
     const currentFilter = this.activeFilter();
@@ -71,6 +71,10 @@ export class PortfolioPageComponent implements OnInit, AfterViewInit, OnDestroy 
   });
 
   private readonly heroTitles = ['Full Stack Developer', 'Carlos Santos'];
+  private readonly typingDelayMs = 90;
+  private readonly deletingDelayMs = 45;
+  private readonly titlePauseMs = 1200;
+  private heroTitleTimeoutId?: ReturnType<typeof setTimeout>;
   private heroTitleIndex = 0;
 
   constructor(
@@ -84,7 +88,7 @@ export class PortfolioPageComponent implements OnInit, AfterViewInit, OnDestroy 
 
   ngOnInit(): void {
     this.themeService.initTheme();
-    this.heroTitle.set(this.heroTitles[this.heroTitleIndex]);
+    this.typeHeroTitle();
   }
 
   ngAfterViewInit(): void {
@@ -92,6 +96,10 @@ export class PortfolioPageComponent implements OnInit, AfterViewInit, OnDestroy 
   }
 
   ngOnDestroy(): void {
+    if (this.heroTitleTimeoutId) {
+      clearTimeout(this.heroTitleTimeoutId);
+    }
+
     this.lockBodyScroll(false);
   }
 
@@ -154,11 +162,6 @@ export class PortfolioPageComponent implements OnInit, AfterViewInit, OnDestroy 
     this.syncBodyScroll();
   }
 
-  onHeroTitleTypingComplete(): void {
-    this.heroTitleIndex = (this.heroTitleIndex + 1) % this.heroTitles.length;
-    this.heroTitle.set(this.heroTitles[this.heroTitleIndex]);
-  }
-
   private syncBodyScroll(): void {
     const modalIsOpen = !!this.selectedProject() || !!this.unavailableMessage();
     this.lockBodyScroll(modalIsOpen);
@@ -166,5 +169,35 @@ export class PortfolioPageComponent implements OnInit, AfterViewInit, OnDestroy 
 
   private lockBodyScroll(lock: boolean): void {
     document.body.style.overflow = lock ? 'hidden' : 'auto';
+  }
+
+  private typeHeroTitle(): void {
+    const fullTitle = this.heroTitles[this.heroTitleIndex];
+    const currentTitle = this.heroTitle();
+
+    if (currentTitle.length < fullTitle.length) {
+      this.heroTitle.set(fullTitle.slice(0, currentTitle.length + 1));
+      this.scheduleHeroTitleStep(() => this.typeHeroTitle(), this.typingDelayMs);
+      return;
+    }
+
+    this.scheduleHeroTitleStep(() => this.deleteHeroTitle(), this.titlePauseMs);
+  }
+
+  private deleteHeroTitle(): void {
+    const currentTitle = this.heroTitle();
+
+    if (currentTitle.length > 0) {
+      this.heroTitle.set(currentTitle.slice(0, -1));
+      this.scheduleHeroTitleStep(() => this.deleteHeroTitle(), this.deletingDelayMs);
+      return;
+    }
+
+    this.heroTitleIndex = (this.heroTitleIndex + 1) % this.heroTitles.length;
+    this.scheduleHeroTitleStep(() => this.typeHeroTitle(), this.typingDelayMs);
+  }
+
+  private scheduleHeroTitleStep(callback: () => void, delayMs: number): void {
+    this.heroTitleTimeoutId = setTimeout(callback, delayMs);
   }
 }

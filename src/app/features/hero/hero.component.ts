@@ -17,15 +17,8 @@ export class HeroComponent {
   @Input() heroTitle = 'Full Stack Developer';
 
   @Output() navigateToProjects = new EventEmitter<void>();
-  @Output() titleTypingComplete = new EventEmitter<void>();
 
   readonly arrowDownIcon = ArrowDown;
   readonly githubIcon = Github;
   readonly linkedinIcon = Linkedin;
-
-  onTitleAnimationIteration(event: AnimationEvent): void {
-    if (event.animationName === 'typing') {
-      this.titleTypingComplete.emit();
-    }
-  }
 }

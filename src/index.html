@@ -1,10 +1,20 @@
 <!doctype html>
-<html lang="pt-br" class="scroll-smooth">
+<html lang="pt-br" class="scroll-smooth dark">
 <head>
   <meta charset="utf-8">
   <title>Eduardo - Desenvolvedor</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('theme');
+        document.documentElement.classList.toggle('dark', theme !== 'light');
+      } catch (error) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
   <script src="assets/vendor/finisher-header.es5.min.js"></script>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link
